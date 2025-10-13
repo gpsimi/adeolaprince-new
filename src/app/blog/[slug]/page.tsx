@@ -7,18 +7,19 @@ export async function generateStaticParams() {
   ];
 }
 
-export default function PostPage({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+export default async function PostPage({ params }: { params: { slug: string } | Promise<{ slug: string }> }) {
+  const resolvedParams = await params;
+  const { slug } = resolvedParams;
 
-  // In future, load content from MDX or CMS based on slug.
+  
   const posts: Record<string, { title: string; body: string }> = {
     'coap-week-1': {
-      title: 'C.O.A.P — Week 1',
-      body: 'This is a placeholder post. Replace with MDX or CMS content.'
+      title: 'C.O.A.P — Title',
+      body: 'This is the Body of the Blog Post.'
     },
     'coap-week-2': {
-      title: 'C.O.A.P — Week 2',
-      body: 'This is a placeholder post. Replace with MDX or CMS content.'
+      title: 'C.O.A.P — Title',
+      body: 'This is the Body of the Blog Post.'
     }
   };
 

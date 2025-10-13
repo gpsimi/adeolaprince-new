@@ -1,0 +1,124 @@
+Prompt for Building Prince Adeola TEM’s Personal Website
+
+> I’m building a modern, personal brand website for **Prince Adeola TEM**, a Saxophonist, Writer, and Public Speaker.
+> He wants a clean, elegant, and interactive website that reflects his creativity, faith, and professionalism.
+>
+> The website should be built using **Next.js (App Router)**, **TypeScript**, and **Tailwind CSS v4**, with **light and dark mode support**, **reusable components**, and **scalable architecture** that can easily integrate with a CMS later (like WordPress or Payload CMS).
+>
+> ---
+>
+> ### 🧭 **Site Structure**
+>
+> **Main Pages**
+>
+> 1. **Home Page**
+>
+>    * Hero section introducing Prince Adeola as Saxophonist, Writer, and Speaker
+>    * About Him and a CTA that leads to the Book page
+     * Highlights of his latest book
+>    * Link to his weekly blog-newsletter *(C.O.A.P — “Chronicles of a Prince”)*
+>    * Featured video or saxophone performance section
+>    * Testimonials or notable appearances
+>    * Newsletter subscription (connected to Mailchimp)
+
+> 2. **About Page**
+>
+>    * Full biography
+>    * Photos of him performing, speaking, and writing
+>    * Section on his mission, calling, and values
+
+> 3. **Book Section**
+>
+>    * Dynamic route under `/book` (e.g. `/book`, `/book/preorder`, `/book/register`, `/book/success`)
+>    * Book details, preorder form (Paystack integration), and book launch registration
+>    * Reusable layout for adding future books
+
+> 4. **Blog Page (`/blog`)**
+>
+>    * Displays blog posts in a grid layout
+>    * Each blog card links to a **dynamic blog page** (e.g. `/blog/coap-week-1`)
+>    * Structured for Markdown or CMS-driven content later
+>    * Include “Subscribe to C.O.A.P” section using Mailchimp integration
+> 5. **Contact Page**
+>
+>    * Contact form with fields:
+>
+>      * Full Name
+>      * Email
+>      * Message
+>      * **Booking Type** (dropdown: Saxophonist, Speaking, Writing Collaboration)
+>    * Form validated with **React Hook Form + Zod**
+>    * Submissions can be emailed or later sent to a backend (e.g., WordPress or API endpoint)
+>
+> ---
+>
+> ### ⚙️ **Features**
+>
+> * **Dark/Light Mode** toggle using Tailwind v4 and CSS variables
+> * **Mailchimp Newsletter Integration** for subscriptions
+> * **Paystack** for preorder payments (book page)
+> * **SEO metadata** for each page (title, description, OpenGraph image)
+> * **Responsive** and optimized for performance
+> * **Framer Motion** animations for smooth transitions
+> * **Reusable Components**: Navbar, Footer, HeroSection, CTASection, Form components, BlogCard
+> * Future-ready architecture to plug in **WordPress** as a headless CMS (for blogs, books, and forms)
+>
+> ---
+>
+> ### 🎨 **Design Direction**
+>
+> * **Style:** Professional, artistic, and elegant — reflecting faith and creativity
+> * **Palette:** Soft neutral backgrounds, royal blue or gold accents (as primary), balanced white space
+> * **Typography:** Serif font for headers (e.g., “Playfair Display”), clean sans-serif for body (e.g., “Inter”)
+> * **Mood:** Calm, inspiring, and modern with subtle animations
+>
+> ---
+>
+> ### 🧩 **Technical Stack**
+>
+> * **Next.js (App Router)** for routing and dynamic pages
+> * **TypeScript** for type safety
+> * **Tailwind CSS v4** with `darkMode: "class"` and CSS variable theming
+> * **React Hook Form + Zod** for all form validations
+> * **Framer Motion** for animations
+> * **Mailchimp SDK** for newsletter
+> * **Paystack Inline SDK** for preorder payments
+> * **(Optional later)**: WordPress or Payload CMS for content management
+>
+> ---
+>
+> ### 🧱 **Developer Notes**
+>
+> * Use a clean folder structure:
+>
+>   ```
+>   app/
+>     book/
+>       page.tsx
+>       preorder/page.tsx
+>       register/page.tsx
+>       success/page.tsx
+>     blog/
+>       page.tsx
+>       [slug]/page.tsx
+>     contact/page.tsx
+>     about/page.tsx
+>     layout.tsx
+>     page.tsx
+>   components/
+>     ui/
+>     sections/
+>     forms/
+>   lib/
+>   ```
+> * Keep components modular and theme-aware.
+> * All styles should adapt automatically between light and dark themes.
+> * Ensure accessibility (aria-labels, alt tags, color contrast).
+> * Make sure the design feels “ready for clients and audiences” — premium, polished, and easy to expand later.
+>
+> ---
+>
+> **Goal:**
+> Deliver a **clean, modern, and scalable personal website** for Prince Adeola TEM — one that integrates his music, writing, speaking, and newsletter seamlessly, while being flexible enough to connect to Mailchimp now and WordPress later.
+
+Ensure that you maintain similar UI styles that already exist through out this upgrade

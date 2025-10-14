@@ -28,7 +28,7 @@ const NewsletterSection = () => {
         description: "You'll receive updates about the book launch.",
       });
       setEmail("");
-    } catch (error) {
+    } catch {
       toast.error("Something went wrong", {
         description: "Please try again later.",
       });

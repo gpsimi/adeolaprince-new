@@ -46,8 +46,6 @@ const Register = () => {
 
   const onSubmit = async (data: RegisterFormValues) => {
     try {
-      // In production, this would send data to your backend
-      // For now, we'll simulate the registration
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
       toast.success("Registration successful!", {

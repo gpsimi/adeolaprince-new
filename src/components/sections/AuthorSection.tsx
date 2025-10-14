@@ -5,8 +5,7 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { UserCircle, ArrowRight } from "lucide-react";
-import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 import ImageCanvas from "../ImageCanvas";
 
 const AuthorSection = () => {

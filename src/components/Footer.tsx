@@ -1,7 +1,6 @@
 'use client'
 
 import Link from "next/link";
-import { Facebook, Instagram, Twitter, Mail } from "lucide-react";
 import { footerLinks, socialLinks } from "@/constants";
 
 const Footer = () => {

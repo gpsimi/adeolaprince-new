@@ -3,13 +3,10 @@ import tseslint from "typescript-eslint";
 import nextPlugin from "@next/eslint-plugin-next";
 
 export default tseslint.config(
-  { ignores: ["dist", ".next"] },
+  { ignores: [".next"] },
+  ...tseslint.configs.recommended,
   {
     files: ["**/*.{ts,tsx}"],
-    extends: [
-      "plugin:@next/next/recommended",
-      ...tseslint.configs.recommended,
-    ],
     languageOptions: {
       ecmaVersion: 2020,
       globals: {
@@ -21,6 +18,7 @@ export default tseslint.config(
       "@next/next": nextPlugin,
     },
     rules: {
+      ...nextPlugin.configs.recommended.rules,
       "@next/next/no-img-element": "off",
       "@typescript-eslint/no-unused-vars": "warn",
     },

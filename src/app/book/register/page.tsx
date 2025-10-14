@@ -44,8 +44,10 @@ const Register = () => {
     },
   });
 
-  const onSubmit = async (data: RegisterFormValues) => {
+  const onSubmit = async (formData: RegisterFormValues) => {
     try {
+      // Here you would typically send the data to your backend API
+      // await fetch('/api/register', { method: 'POST', body: JSON.stringify(formData) });
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
       toast.success("Registration successful!", {
@@ -54,7 +56,7 @@ const Register = () => {
 
       // Navigate to success page
       router.push("/success");
-    } catch (error) {
+    } catch {
       toast.error("Registration failed", {
         description: "Please try again later.",
       });

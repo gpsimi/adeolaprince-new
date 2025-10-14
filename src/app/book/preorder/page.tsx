@@ -28,6 +28,31 @@ const preorderSchema = z.object({
 
 type PreorderFormValues = z.infer<typeof preorderSchema>;
 
+// Paystack types
+interface PaystackResponse {
+  reference: string;
+  status: string;
+  trans: string;
+  message: string;
+}
+
+interface PaystackSetup {
+  key: string;
+  email: string;
+  amount: number;
+  currency: string;
+  ref: string;
+  metadata?: {
+    custom_fields: Array<{
+      display_name: string;
+      variable_name: string;
+      value: string;
+    }>;
+  };
+  callback: (response: PaystackResponse) => void;
+  onClose: () => void;
+}
+
 const Preorder = () => {
   const router = useRouter();
 
@@ -48,7 +73,7 @@ const Preorder = () => {
     const totalAmount = pricePerBook * data.quantity;
 
     // Initialize Paystack
-    const handler = (window as any).PaystackPop.setup({
+    const handler = (window as typeof window & { PaystackPop: { setup: (config: PaystackSetup) => { openIframe: () => void } } }).PaystackPop.setup({
       key: paystackKey,
       email: data.email,
       amount: totalAmount,
@@ -73,7 +98,7 @@ const Preorder = () => {
           },
         ],
       },
-      callback: (response: any) => {
+      callback: (response: PaystackResponse) => {
         toast.success("Payment successful!", {
           description: `Reference: ${response.reference}`,
         });

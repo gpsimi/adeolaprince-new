@@ -10,7 +10,7 @@ import { useState } from "react";
 const HeroSection = () => {
   const [open, setOpen] = useState(false);
 
-    const imageSrc = "/images/hero-portrait-3.jpg";
+    // const imageSrc = "/images/hero-portrait-3.jpg";
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">

@@ -43,7 +43,7 @@ const AboutBookSection = () => {
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-6">About the Book</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-balance">
-            "The Path of Becoming" is more than a book—it's a compass for your spiritual
+            "Hello, I am Light" is more than a book—it's a compass for your spiritual
             journey. Through profound insights and practical wisdom, Prince Adeola
             guides you toward discovering your true purpose and living authentically in
             your divine calling.

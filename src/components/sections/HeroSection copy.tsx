@@ -31,7 +31,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-balance leading-tight"
           >
-            The Path of Becoming
+            Hello, I am Light
           </motion.h1>
 
           <motion.p

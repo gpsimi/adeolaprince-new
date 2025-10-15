@@ -28,7 +28,7 @@ const CTASection = ({ variant = "primary" }: CTASectionProps) => {
             <h2 className="text-3xl md:text-5xl font-bold mb-6">Join the Launch Event</h2>
             <p className="text-lg text-muted-foreground mb-8 text-balance">
               Be part of an unforgettable experience as we celebrate the release of
-              "The Path of Becoming." Connect with like-minded believers and receive
+              "Hello, I am Light." Connect with like-minded believers and receive
               exclusive insights from the author.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

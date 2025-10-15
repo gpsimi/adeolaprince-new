@@ -79,7 +79,7 @@ const Register = () => {
                 Register for Launch Event
               </h1>
               <p className="text-lg text-muted-foreground">
-                Join us for an unforgettable celebration of "The Path of Becoming."
+                Join us for an unforgettable celebration of "Hello, I am Light."
                 Connect with the author and fellow believers on this journey of transformation.
               </p>
             </div>

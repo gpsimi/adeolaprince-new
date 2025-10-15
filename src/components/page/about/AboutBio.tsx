@@ -47,7 +47,7 @@ const AboutBio = () => {
               </p>
 
               <p>
-                "The Path of Becoming" represents years of spiritual insight, ministerial
+                "Hello, I am Light" represents years of spiritual insight, ministerial
                 experience, and divine revelation distilled into a powerful guide for those
                 ready to embark on a journey of genuine transformation.
               </p>

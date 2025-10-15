@@ -1,7 +1,7 @@
 import ContactForm from "@/components/forms/ContactForm";
 
 export const metadata = {
-  title: "Contact — The Path of Becoming",
+  title: "Contact - Prince Adeola",
   description: "Get in touch with Prince Adeola for bookings and collaborations.",
 };
 

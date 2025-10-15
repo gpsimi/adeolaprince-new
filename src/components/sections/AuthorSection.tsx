@@ -56,7 +56,7 @@ const AuthorSection = () => {
               people navigate their spiritual journey with clarity and confidence.
             </p>
             <p className="text-muted-foreground mb-8">
-              Through "The Path of Becoming," he shares transformative principles
+              Through "Hello, I am Light," he shares transformative principles
               that will empower you to step fully into your God-given destiny.
             </p>
             <Button asChild size="lg" variant="outline" className="group">

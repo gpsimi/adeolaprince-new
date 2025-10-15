@@ -24,7 +24,7 @@ const BookSummary = () => {
                         className="prose prose-lg max-w-none"
                     >
                         <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                            In a world full of noise and distraction, "The Path of Becoming" offers
+                            In a world full of noise and distraction, "Hello, I am Light" offers
                             clarity and direction for those seeking authentic spiritual transformation.
                             This isn't just another self-help book—it's a biblically-grounded roadmap
                             to discovering who God created you to be and living fully in that reality.

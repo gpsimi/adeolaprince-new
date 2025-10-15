@@ -86,7 +86,7 @@ const HeroSection = () => {
               /> */}
               
               <Image 
-                src="/images/hero-portrait-3.JPG"
+                src="/images/hero-portrait-5.jpg"
                 alt="Prince Adeola portrait"
                 width={1000}
                 height={1000}
@@ -113,7 +113,7 @@ const HeroSection = () => {
 
           <div className="relative w-full max-w-4xl h-[80vh]">
             <Image 
-              src="/images/hero-portrait-3.JPG" 
+              src="/images/hero-portrait-5.jpg" 
               alt="Prince Adeola portrait enlarged" 
               fill style={{ objectFit: 'contain' }} 
               priority 

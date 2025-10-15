@@ -19,8 +19,6 @@ export default function ContactPage() {
         <div className="mx-auto container max-w-4xl justify-center items-center">
           <ContactForm />
         </div>
-
-        
       </div>
     </main>
   );

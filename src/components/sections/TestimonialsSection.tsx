@@ -7,12 +7,12 @@ import { Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Sarah Johnson",
+    name: "Sarah Adeola",
     role: "Ministry Leader",
     text: "This book has transformed my understanding of spiritual growth. Prince Adeola's insights are profound yet practical, guiding me step by step on my journey.",
   },
   {
-    name: "Michael Chen",
+    name: "Michael Olubakin",
     role: "Pastor",
     text: "A must-read for anyone seeking authentic transformation. The wisdom in these pages will challenge and inspire you to embrace your true calling.",
   },

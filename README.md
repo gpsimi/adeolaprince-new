@@ -1,6 +1,6 @@
-# path-of-becoming-launch (adeolaprince-new)
+# Adeola Prince Personal Website
 
-This repository contains a Next.js application (app router) for the "Path of Becoming" launch site.
+This repository contains a Next.js application (app router) for his Personal website and book launch site.
 
 This README replaces the previous placeholder content with clear setup instructions, scripts, and notes so you or a collaborator can get the project running locally quickly.
 

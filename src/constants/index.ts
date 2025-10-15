@@ -50,7 +50,7 @@ export const socialLinks = [
     {
         icon: Mail,
         name: "LinkedIn",
-        link: "mail:adeolaprincezz@yahoo.com"
+        link: "mailto:adeolaprincezz@yahoo.com"
     },
 ]
 

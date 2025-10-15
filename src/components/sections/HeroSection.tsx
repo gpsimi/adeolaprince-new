@@ -84,18 +84,9 @@ const HeroSection = () => {
                 className="cursor-zoom-in"
                 onClick={() => setOpen(true)}
               /> */}
-              {/* <Image
-                src={imageSrc}
-                alt="Prince Adeola portrait"
-                priority
-                width={1000}
-                height={1000}
-                className="cursor-zoom-in w-full h-full object-cover"
-                onClick={() => setOpen(true)}
-              /> */}
-
+              
               <Image 
-                src="/images/hero-portrait-3.jpg"
+                src="/images/hero-portrait-3.JPG"
                 alt="Prince Adeola portrait"
                 width={1000}
                 height={1000}
@@ -121,7 +112,12 @@ const HeroSection = () => {
           </button>
 
           <div className="relative w-full max-w-4xl h-[80vh]">
-            <Image src="/images/hero-portrait-3.jpg" alt="Prince Adeola portrait enlarged" fill style={{ objectFit: 'contain' }} priority />
+            <Image 
+              src="/images/hero-portrait-3.JPG" 
+              alt="Prince Adeola portrait enlarged" 
+              fill style={{ objectFit: 'contain' }} 
+              priority 
+            />
           </div>
         </div>
       )}

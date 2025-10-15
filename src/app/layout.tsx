@@ -17,11 +17,11 @@ const playfairDisplay = Playfair_Display({
 
 export const metadata: Metadata = {
   title: "Prince Adeola - Global Speaker || Saxophonist || Author",
-  description: "Discover The Path of Becoming by Prince Adeola. A transformative journey of spiritual growth, faith, and purpose. Preorder your copy today.",
+  description: "Witer and Global Speaker - Prince Adeola. A transformative Speaker and Writer on Spiritual growth, faith, and purpose. Preorder your copy today.",
   authors: [{ name: "Prince Adeola" }],
-  keywords: ["The Path of Becoming", "Prince Adeola", "spiritual growth", "faith", "Christian book", "preorder"],
+  keywords: ["Hello, I am Light - It is Light to meet you", "Prince Adeola", "spiritual growth", "faith", "Christian book", "preorder"],
   
-  metadataBase: new URL("https://thepathofbecoming.com"),
+  metadataBase: new URL("https://adeolaprince.com"),
 };
 
 export default function RootLayout({

@@ -54,11 +54,16 @@ const AuthorSection = () => {
               pursue his calling fuels his desire to inspire change.
             </p>
             <p className="text-muted-foreground mb-8">
-              Through "Hello, I am Light," he shares transformative principles
-              that will empower you to step fully into your God-given destiny.
+              Through thought-provoking talks and letters, he inspires young adults on the powerful
+              intersection of faith, logic, and science. His email newsletter, <span className="font-bold">Chronicles of A. Prince</span>,
+              is a catalyst that has ignited change in the lives of many across different continents by
+              challenging pop culture and driving deeper thought. Whether writing or playing soul-stirring
+              music on his saxophone, Prince is driven by a passion for  human behavioral science, apologetics,
+              and truth to answer life's questions: Who are we, why are we here, what should we do while we are here,
+              and where are we going to?
             </p>
 
-            Through thought-provoking talks and letters, he inspires young adults on the powerful intersection of faith, logic, and science. His email newsletter, Chronicles of A. Prince, is a catalyst that has ignited change in the lives of many across different continents by challenging pop culture and driving deeper thought. Whether writing or playing soul-stirring music on his saxophone, Prince is driven by a passion for  human behavioral science, apologetics, and truth to answer life’s questions: Who are we, why are we here, what should we do while we are here, and where are we going to?
+
 
 
 

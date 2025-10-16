@@ -43,7 +43,7 @@ const AboutHero = () => {
                   <Link href="/preorder">Preorder the Book</Link>
                 </Button>
                 <Button asChild size="lg" variant="outline">
-                  <Link href="/book">Learn About the Book</Link>
+                  <Link href="/book">About the Book</Link>
                 </Button>
               </div>
             </motion.div>

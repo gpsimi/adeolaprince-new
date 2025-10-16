@@ -43,9 +43,9 @@ const AuthorSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <h2 className="text-3xl md:text-5xl font-bold mb-6">Meet the Author</h2>
-            <h3 className="text-2xl font-semibold text-primary mb-4">Prince Adeola</h3>
+            {/* <h3 className="text-2xl font-semibold text-primary mb-4">Prince Adeola</h3> */}
             <p className="text-lg text-muted-foreground mb-6">
-              Prince Adeola is a polymath with a first-class degree in avionics engineering
+              <span className="font-extrabold">Prince Adeola</span> is a polymath with a first-class degree in avionics engineering
               from National Aviation University, Kyiv Ukraine. He balances a career in aircraft
               engineering, music, and a profound passion for illuminating life's biggest questions.
             </p>
@@ -55,7 +55,7 @@ const AuthorSection = () => {
             </p>
             <p className="text-muted-foreground mb-8">
               Through thought-provoking talks and letters, he inspires young adults on the powerful
-              intersection of faith, logic, and science. His email newsletter, <span className="font-bold">Chronicles of A. Prince</span>,
+              intersection of faith, logic, and science. His email newsletter, <span className="font-extrabold">Chronicles of A. Prince</span>,
               is a catalyst that has ignited change in the lives of many across different continents by
               challenging pop culture and driving deeper thought. Whether writing or playing soul-stirring
               music on his saxophone, Prince is driven by a passion for  human behavioral science, apologetics,

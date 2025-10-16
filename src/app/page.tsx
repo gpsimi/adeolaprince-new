@@ -3,7 +3,7 @@ import AboutBookSection from "@/components/sections/AboutBookSection";
 import AuthorSection from "@/components/sections/AuthorSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import CTASection from "@/components/sections/CTASection";
-import NewsletterSection from "@/components/sections/NewsletterSection";
+
 
 const Home = () => {
   return (

@@ -45,7 +45,7 @@ const AuthorSection = () => {
             <h2 className="text-3xl md:text-5xl font-bold mb-6">Meet the Author</h2>
             {/* <h3 className="text-2xl font-semibold text-primary mb-4">Prince Adeola</h3> */}
             <p className="text-lg text-muted-foreground mb-6">
-              <span className="font-extrabold">Prince Adeola</span> is a polymath with a first-class degree in avionics engineering
+              <span className="font-extrabold text-primary">Prince Adeola</span> is a polymath with a first-class degree in avionics engineering
               from National Aviation University, Kyiv Ukraine. He balances a career in aircraft
               engineering, music, and a profound passion for illuminating life's biggest questions.
             </p>

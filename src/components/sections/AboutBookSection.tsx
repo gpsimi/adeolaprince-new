@@ -42,13 +42,14 @@ const AboutBookSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-6">About the Book</h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-balance">
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-balance ">
             In a dark world where objective truth is on the verge of extinction, "Hello, I Am Light"
             is a playbook for the curriculum of light.
             This curriculum offers a fine blend of logic, science, and faith, providing
             you with the recipe not just for personal illumination, but to become a
             catalyst to bring light to everything you touch and every room you enter.
             Making the world a luminous place with luminous people, one encounter at a time.
+            <br />
             Enroll in the curriculum, and Join me on a trip to where light resides.
             Are you ready?
           </p>

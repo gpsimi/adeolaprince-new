@@ -43,10 +43,14 @@ const AboutBookSection = () => {
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-6">About the Book</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-balance">
-            "Hello, I am Light" is more than a book—it's a compass for your spiritual
-            journey. Through profound insights and practical wisdom, Prince Adeola
-            guides you toward discovering your true purpose and living authentically in
-            your divine calling.
+            In a dark world where objective truth is on the verge of extinction, "Hello, I Am Light"
+            is a playbook for the curriculum of light.
+            This curriculum offers a fine blend of logic, science, and faith, providing
+            you with the recipe not just for personal illumination, but to become a
+            catalyst to bring light to everything you touch and every room you enter.
+            Making the world a luminous place with luminous people, one encounter at a time.
+            Enroll in the curriculum, and Join me on a trip to where light resides.
+            Are you ready?
           </p>
         </motion.div>
 

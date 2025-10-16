@@ -32,7 +32,7 @@ const AuthorSection = () => {
                   className="rounded-lg object-cover w-full md:h-[640px]"
                 /> */}
                 <ImageCanvas src="/images/hero-portrait-1.jpg" alt="Author Prince Adeola" className="rounded-lg object-cover w-full md:h-[640px]" />
-                
+
               </div>
             </div>
           </motion.div>
@@ -45,20 +45,25 @@ const AuthorSection = () => {
             <h2 className="text-3xl md:text-5xl font-bold mb-6">Meet the Author</h2>
             <h3 className="text-2xl font-semibold text-primary mb-4">Prince Adeola</h3>
             <p className="text-lg text-muted-foreground mb-6">
-              A passionate minister, teacher, and spiritual guide dedicated to helping
-              believers discover their true identity in Christ and walk in their divine
-              purpose.
+              Prince Adeola is a polymath with a first-class degree in avionics engineering
+              from National Aviation University, Kyiv Ukraine. He balances a career in aircraft
+              engineering, music, and a profound passion for illuminating life's biggest questions.
             </p>
             <p className="text-muted-foreground mb-6">
-              With years of ministry experience and a heart for transformation,
-              Prince Adeola brings profound spiritual insights combined with
-              practical wisdom. His teaching has impacted countless lives, helping
-              people navigate their spiritual journey with clarity and confidence.
+              Prince's unique path which includes escaping the Russian-Ukrainian war to
+              pursue his calling fuels his desire to inspire change.
             </p>
             <p className="text-muted-foreground mb-8">
               Through "Hello, I am Light," he shares transformative principles
               that will empower you to step fully into your God-given destiny.
             </p>
+
+            Through thought-provoking talks and letters, he inspires young adults on the powerful intersection of faith, logic, and science. His email newsletter, Chronicles of A. Prince, is a catalyst that has ignited change in the lives of many across different continents by challenging pop culture and driving deeper thought. Whether writing or playing soul-stirring music on his saxophone, Prince is driven by a passion for  human behavioral science, apologetics, and truth to answer life’s questions: Who are we, why are we here, what should we do while we are here, and where are we going to?
+
+
+
+
+
             <Button asChild size="lg" variant="outline" className="group">
               <Link href="/about">
                 Learn More About the Author

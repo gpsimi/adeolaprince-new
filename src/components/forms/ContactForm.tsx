@@ -20,7 +20,9 @@ import {
 const contactSchema = z.object({
   fullName: z.string().min(2, "Please enter your full name"),
   email: z.string().email("Please enter a valid email"),
-  bookingType: z.enum(["Saxophonist", "Speaking", "Writing Collaboration"]),
+  bookingType: z.enum(["Saxophonist", "Speaking", "Writing Collaboration"], {
+    required_error: "Please select a booking type",
+  }),
   message: z.string().min(10, "Please enter a longer message"),
 });
 
@@ -32,7 +34,7 @@ export default function ContactForm() {
     defaultValues: {
       fullName: "",
       email: "",
-      bookingType: "Saxophonist",
+      bookingType: undefined,
       message: "",
     },
   });
@@ -81,6 +83,7 @@ export default function ContactForm() {
               {...form.register("bookingType")}
               className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
             >
+              <option value="" disabled>Select Booking Type</option>
               <option value="Saxophonist">Saxophonist</option>
               <option value="Speaking">Speaking</option>
               <option value="Writing Collaboration">Writing Collaboration</option>

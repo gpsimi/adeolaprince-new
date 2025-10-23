@@ -31,7 +31,7 @@ const BookSummary = () => {
                         </p>
 
                         <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                            Prince Adeola draws from years of ministry experience, deep scriptural
+                            Adeola Prince draws from years of ministry experience, deep scriptural
                             insight, and profound spiritual revelation to guide you through a journey
                             of genuine transformation. Each chapter unveils powerful truths that will
                             challenge your perspectives, deepen your faith, and empower you to step

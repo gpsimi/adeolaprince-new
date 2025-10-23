@@ -50,7 +50,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-base md:text-lg mb-10 text-muted-foreground/80"
           >
-            By <span className="font-semibold text-foreground">Prince Adeola</span>
+            By <span className="font-semibold text-foreground">Adeola Prince</span>
           </motion.p>
 
           <motion.div
@@ -86,7 +86,7 @@ const HeroSection = () => {
                   <BookOpen className="h-16 w-16 mx-auto mb-4 text-primary" />
                   <p className="text-2xl font-serif font-bold">The Path of</p>
                   <p className="text-3xl font-serif font-bold text-primary">Becoming</p>
-                  <p className="mt-4 text-sm text-muted-foreground">Prince Adeola</p>
+                  <p className="mt-4 text-sm text-muted-foreground">Adeola Prince</p>
                 </div>
               </div>
             </div>

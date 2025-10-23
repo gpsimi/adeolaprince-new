@@ -30,7 +30,7 @@ const AboutHero = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">Prince Adeola</h1>
+              <h1 className="text-4xl md:text-6xl font-bold mb-6">Adeola Prince</h1>
               <p className="text-xl text-muted-foreground mb-8">
                 Minister, Teacher, and Spiritual Guide
               </p>

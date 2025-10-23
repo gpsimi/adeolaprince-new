@@ -15,7 +15,7 @@ const Footer = () => {
             <h3 className="text-xl font-serif font-bold mb-3">Adeola Prince</h3>
             <p className="text-muted-foreground mb-4 max-w-md">
               A transformative journey through faith, purpose, and spiritual growth.
-              Join Prince Adeola on a path that leads to deeper understanding
+              Join Adeola Prince on a path that leads to deeper understanding
               and authentic becoming.
             </p>
             <div className="flex space-x-4">
@@ -94,7 +94,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-12 pt-8 border-t border-border text-center text-sm text-muted-foreground">
-          <p>&copy; {currentYear} Prince Adeola. All rights reserved.</p>
+          <p>&copy; {currentYear} Adeola Prince. All rights reserved.</p>
         </div>
       </div>
     </footer>

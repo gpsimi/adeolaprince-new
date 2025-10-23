@@ -29,7 +29,7 @@ const HeroSection = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-balance leading-tight text-center lg:text-left"
             >
-              <span className="font-italics">Hi,</span> I&apos;m Prince Adeola
+              <span className="font-italics">Hi,</span> I&apos;m Adeola Prince
             </motion.h1>
 
             <motion.p
@@ -76,7 +76,7 @@ const HeroSection = () => {
               {/* Image from public folder. If missing, browser will show broken image — we overlay fallback content below. */}
               {/* <Image
                 src={imageSrc}
-                alt="Prince Adeola portrait"
+                alt="Adeola Prince portrait"
                 fill
                 style={{ objectFit: 'cover' }}
                 sizes="(min-width: 1024px) 420px, (min-width: 768px) 360px, 280px w-full"
@@ -87,7 +87,7 @@ const HeroSection = () => {
               
               <Image 
                 src="/images/hero-portrait-5.jpg"
-                alt="Prince Adeola portrait"
+                alt="Adeola Prince portrait"
                 width={1000}
                 height={1000}
                 className="cursor-zoom-in w-full h-full object-cover"
@@ -114,7 +114,7 @@ const HeroSection = () => {
           <div className="relative w-full max-w-4xl h-[80vh]">
             <Image 
               src="/images/hero-portrait-5.jpg" 
-              alt="Prince Adeola portrait enlarged" 
+              alt="Adeola Prince portrait enlarged" 
               fill style={{ objectFit: 'contain' }} 
               priority 
             />

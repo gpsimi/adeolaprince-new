@@ -9,7 +9,7 @@ const testimonials = [
   {
     name: "Sarah Adeola",
     role: "Ministry Leader",
-    text: "This book has transformed my understanding of spiritual growth. Prince Adeola's insights are profound yet practical, guiding me step by step on my journey.",
+    text: "This book has transformed my understanding of spiritual growth. Adeola Prince's insights are profound yet practical, guiding me step by step on my journey.",
   },
   {
     name: "Michael Olubakin",

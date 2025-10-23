@@ -33,7 +33,7 @@ const Preorder = () => {
               <div className="mb-8 p-6 bg-primary/5 rounded-lg border border-primary/20">
                 <h3 className="font-semibold text-lg mb-2">Book Details</h3>
                 <p className="text-muted-foreground mb-3">
-                  Hello, I am Light by Prince Adeola
+                  Hello, I am Light by Adeola Prince
                 </p>
                 <p className="text-2xl font-bold text-primary">₦2,500 per copy</p>
               </div>

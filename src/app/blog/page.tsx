@@ -3,7 +3,7 @@ import { BlogGrid } from "@/components/page/blog";
 
 export const metadata = {
   title: "C.O.A.P — Chronicles of a Prince",
-  description: "Weekly newsletter from Prince Adeola",
+  description: "Weekly newsletter from Adeola Prince",
 };
 
 

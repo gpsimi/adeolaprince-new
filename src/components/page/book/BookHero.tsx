@@ -15,11 +15,11 @@ const BookHero = () => {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6 }}
                     >
-                        <div className="relative max-w-md mx-auto lg:mx-0">
+                        <div className="relative  mx-auto lg:mx-0">
                             <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-lg transform rotate-3" />
-                            <div className="relative bg-card shadow-elegant rounded-lg aspect-[2/3] flex items-center justify-center">
+                            <div className="relative bg-card shadow-elegant rounded-lg  flex items-center justify-center">
                                 <Image
-                                    src="/images/bookcover.jpg"
+                                    src="/images/3d-cover.jpg"
                                     alt="book-cover"
                                     width={500}
                                     height={300}

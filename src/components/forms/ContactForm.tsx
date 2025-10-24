@@ -71,7 +71,7 @@ export default function ContactForm() {
         <FormItem>
           <FormLabel>Email</FormLabel>
           <FormControl>
-            <Input {...form.register("email")} type="email" placeholder="you@example.com" />
+            <Input {...form.register("email")} type="email" placeholder="Email Address" />
           </FormControl>
           <FormMessage />
         </FormItem>

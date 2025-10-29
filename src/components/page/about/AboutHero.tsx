@@ -49,7 +49,7 @@ const AboutHero = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button asChild size="lg" className="gradient-primary shadow-elegant">
-                <Link href="/preorder">Preorder the Book</Link>
+                <Link href="/book/preorder">Preorder the Book</Link>
               </Button>
               <Button asChild size="lg" variant="outline">
                 <Link href="/book">About the Book</Link>

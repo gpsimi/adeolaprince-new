@@ -1,8 +1,7 @@
 import { notFound } from 'next/navigation'
 import { supabase } from '@/lib/supabase-client'
-import type { Database } from '@/types/supabase'
 
-type BlogPost = Database['public']['Tables']['blogs']['Row']
+type BlogPost = any
 
 export async function generateStaticParams() {
   try {

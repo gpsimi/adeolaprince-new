@@ -17,6 +17,7 @@ export default function ImageCanvas({ src, alt, className = '', width, height }:
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
+
     const img = new Image()
     img.src = src
     img.crossOrigin = 'anonymous' // requires server to set Access-Control-Allow-Origin

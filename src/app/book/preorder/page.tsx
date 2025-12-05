@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-import { PreorderForm } from "@/components/forms/PreorderForm";
+import PreorderForm  from "@/components/forms/PreorderForm";
 import { ShoppingCart } from "lucide-react";
 
 

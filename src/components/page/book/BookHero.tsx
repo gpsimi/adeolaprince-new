@@ -42,7 +42,7 @@ const BookHero = () => {
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
                             <Button asChild size="lg" className="gradient-primary shadow-elegant group">
-                                <Link href="/preorder">
+                                <Link href="/book/preorder">
                                     Preorder Now
                                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                                 </Link>

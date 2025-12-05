@@ -1,190 +1,196 @@
-import React from 'react'
+// src/components/forms/PreorderForm.tsx
+'use client';
+
+import React from 'react';
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { toast } from "sonner";
-import { useRouter } from "next/navigation";
 import {
-    Form,
-    FormControl,
-    FormField,
-    FormItem,
-    FormLabel,
-    FormMessage,
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
 } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
-
-
-// Preorder form schema
+// Validation schema
 const preorderSchema = z.object({
-    fullName: z.string().trim().min(2, "Name must be at least 2 characters").max(100, "Name too long"),
-    email: z.string().trim().email("Invalid email address").max(255, "Email too long"),
-    phone: z.string().trim().min(10, "Phone number must be at least 10 digits").max(20, "Phone number too long"),
-    quantity: z.coerce.number().min(1, "Minimum quantity is 1").max(50, "Maximum quantity is 50"),
+  fullName: z.string().trim().min(2, "Name must be at least 2 characters").max(100, "Name too long"),
+  email: z.string().trim().email("Invalid email address").max(255, "Email too long"),
+  phone: z.string().trim().optional(),
+  quantity: z.coerce.number().min(1, "Minimum quantity is 1").max(50, "Maximum quantity is 50"),
+  format: z.enum(["hardcopy", "softcopy"], {
+    required_error: "Select a format",
+  }),
 });
 
 type PreorderFormValues = z.infer<typeof preorderSchema>;
 
-// Paystack types
-interface PaystackResponse {
-    reference: string;
-    status: string;
-    trans: string;
-    message: string;
-}
+export default function PreorderForm() {
+  const [loading, setLoading] = React.useState(false);
 
-interface PaystackSetup {
-    key: string;
-    email: string;
-    amount: number;
-    currency: string;
-    ref: string;
-    metadata?: {
-        custom_fields: Array<{
-            display_name: string;
-            variable_name: string;
-            value: string;
-        }>;
-    };
-    callback: (response: PaystackResponse) => void;
-    onClose: () => void;
-}
+  const form = useForm<PreorderFormValues>({
+    resolver: zodResolver(preorderSchema),
+    defaultValues: {
+      fullName: "",
+      email: "",
+      phone: "",
+      quantity: 1,
+      format: undefined,
+    } as Partial<PreorderFormValues>,
+  });
 
-export const PreorderForm = () => {
+  // Ensure Paystack script is loaded
+  const ensurePaystackLoaded = () => {
+    if (!(window as any).PaystackPop) {
+      const s = document.createElement("script");
+      s.src = "https://js.paystack.co/v1/inline.js";
+      s.async = true;
+      document.head.appendChild(s);
+    }
+  };
 
-    const router = useRouter();
+  React.useEffect(() => {
+    ensurePaystackLoaded();
+  }, []);
 
-    const form = useForm<PreorderFormValues>({
-        resolver: zodResolver(preorderSchema),
-        defaultValues: {
-            fullName: "",
-            email: "",
-            phone: "",
-            quantity: 1,
-        },
-    });
+  const onSubmit = async (data: PreorderFormValues) => {
+    if (data.format === "softcopy") {
+      // simple redirect to Selar
+      window.location.href = "https://selar.co/YOUR-SOFTCOPY-LINK";
+      return;
+    }
 
+    // Hardcopy flow: initialize payment via server
+    setLoading(true);
+    try {
+      const res = await fetch("/api/paystack/initialize", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      const json = await res.json();
+      if (res.ok && json.success && json.authorization_url) {
+        window.location.href = json.authorization_url;
+      } else {
+        const message =
+          typeof json?.error === "string"
+            ? json.error
+            : json?.details?.message ?? "Payment initialization failed. Please try again.";
+        console.error("Initialize failed", json);
+        toast.error(message);
+      }
+    } catch (err) {
+      console.error(err);
+      toast.error("An error occurred initializing payment.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
+  return (
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+        <FormField
+          control={form.control}
+          name="fullName"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Full Name *</FormLabel>
+              <FormControl>
+                <Input placeholder="John Doe" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
 
-    const onSubmit = (data: PreorderFormValues) => {
-        // Paystack configuration
-        const paystackKey = "pk_test_xxxxxxxxxxxx"; // Replace with actual Paystack public key
-        const pricePerBook = 2500; // Price in smallest currency unit (kobo for NGN)
-        const totalAmount = pricePerBook * data.quantity;
+        <FormField
+          control={form.control}
+          name="email"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Email Address *</FormLabel>
+              <FormControl>
+                <Input type="email" placeholder="john@example.com" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
 
-        // Initialize Paystack
-        const handler = (window as typeof window & { PaystackPop: { setup: (config: PaystackSetup) => { openIframe: () => void } } }).PaystackPop.setup({
-            key: paystackKey,
-            email: data.email,
-            amount: totalAmount,
-            currency: "NGN",
-            ref: `BOOK-${Date.now()}`,
-            metadata: {
-                custom_fields: [
-                    {
-                        display_name: "Full Name",
-                        variable_name: "full_name",
-                        value: data.fullName,
-                    },
-                    {
-                        display_name: "Phone",
-                        variable_name: "phone",
-                        value: data.phone,
-                    },
-                    {
-                        display_name: "Quantity",
-                        variable_name: "quantity",
-                        value: data.quantity.toString(),
-                    },
-                ],
-            },
-            callback: (response: PaystackResponse) => {
-                toast.success("Payment successful!", {
-                    description: `Reference: ${response.reference}`,
-                });
-                router.push("/success");
-            },
-            onClose: () => {
-                toast.error("Payment cancelled", {
-                    description: "You can try again when ready.",
-                });
-            },
-        });
+        <FormField
+          control={form.control}
+          name="phone"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Phone Number (optional)</FormLabel>
+              <FormControl>
+                <Input placeholder="+234 800 000 0000" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
 
-        handler.openIframe();
-    };
+        <FormField
+          control={form.control}
+          name="quantity"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Quantity *</FormLabel>
+              <FormControl>
+                <Input type="number" min={1} max={50} {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
 
-    return (
-        <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                <FormField
-                    control={form.control}
-                    name="fullName"
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>Full Name *</FormLabel>
-                            <FormControl>
-                                <Input placeholder="John Doe" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                        </FormItem>
-                    )}
-                />
+        <FormField
+          control={form.control}
+          name="format"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Format *</FormLabel>
+              <FormControl>
+                <select
+                  className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm"
+                  {...field}
+                  value={field.value ?? ""}
+                  onChange={(event) => field.onChange(event.target.value)}
+                >
+                  <option value="" disabled>
+                    Select a format
+                  </option>
+                  <option value="hardcopy">Hardcopy (Printed Book)</option>
+                  <option value="softcopy">Softcopy (PDF)</option>
+                </select>
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
 
-                <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>Email Address *</FormLabel>
-                            <FormControl>
-                                <Input type="email" placeholder="john@example.com" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                        </FormItem>
-                    )}
-                />
-
-                <FormField
-                    control={form.control}
-                    name="phone"
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>Phone Number *</FormLabel>
-                            <FormControl>
-                                <Input placeholder="+234 800 000 0000" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                        </FormItem>
-                    )}
-                />
-
-                <FormField
-                    control={form.control}
-                    name="quantity"
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>Quantity *</FormLabel>
-                            <FormControl>
-                                <Input type="number" min="1" max="50" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                        </FormItem>
-                    )}
-                />
-
-                <div className="pt-4">
-                    <Button
-                        type="submit"
-                        size="lg"
-                        className="w-full gradient-primary shadow-elegant"
-                    >
-                        Proceed to Payment
-                    </Button>
-                </div>
-            </form>
-        </Form>
-    )
+        <div className="pt-4">
+          <Button
+            type="submit"
+            size="lg"
+            className="w-full gradient-primary shadow-elegant"
+            disabled={loading}
+          >
+            {loading
+              ? "Processing..."
+              : form.getValues("format") === "softcopy"
+              ? "Proceed to Selar"
+              : "Proceed to Payment"}
+          </Button>
+        </div>
+      </form>
+    </Form>
+  );
 }

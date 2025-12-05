@@ -1,12 +1,13 @@
-//src/app/book/success/page.tsx
+//src/app/book/failure/page.tsx
+
 'use client'
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { CheckCircle, Home, Mail } from "lucide-react";
+import { XCircle, Home, RefreshCw } from "lucide-react";
 
-const Success = () => {
+const Failure = () => {
   return (
     <div className="min-h-screen pt-20 flex items-center justify-center">
       <section className="py-20">
@@ -23,49 +24,50 @@ const Success = () => {
               transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
               className="mb-8"
             >
-              <CheckCircle className="h-24 w-24 text-primary mx-auto" />
+              <XCircle className="h-24 w-24 text-red-500 mx-auto" />
             </motion.div>
 
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Success!</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-red-600">Payment Failed</h1>
             <p className="text-xl text-muted-foreground mb-8">
-              Thank you for your order/registration. We're excited to have you join us
-              on this transformative journey.
+              We're sorry, but we couldn't process your payment at this time. Please try again.
             </p>
 
             <div className="bg-card p-8 rounded-lg shadow-elegant mb-8">
-              <Mail className="h-12 w-12 text-primary mx-auto mb-4" />
-              <h2 className="text-2xl font-semibold mb-3">What's Next?</h2>
+              <h2 className="text-2xl font-semibold mb-3">What can you do?</h2>
               <div className="space-y-3 text-left text-muted-foreground">
                 <p className="flex items-start">
-                  <span className="mr-2">✓</span>
-                  <span>You'll receive a confirmation email shortly with all the details</span>
+                  <span className="mr-2">•</span>
+                  <span>Check your payment method and try again</span>
                 </p>
                 <p className="flex items-start">
-                  <span className="mr-2">✓</span>
-                  <span>We'll keep you updated on shipping/event information</span>
+                  <span className="mr-2">•</span>
+                  <span>Ensure you have sufficient funds</span>
                 </p>
                 <p className="flex items-start">
-                  <span className="mr-2">✓</span>
-                  <span>Check your spam folder if you don't see our email within 24 hours</span>
+                  <span className="mr-2">•</span>
+                  <span>Contact your bank if the issue persists</span>
                 </p>
               </div>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="gradient-primary shadow-elegant">
+                <Link href="/book/preorder">
+                  <RefreshCw className="mr-2 h-5 w-5" />
+                  Try Again
+                </Link>
+              </Button>
+              <Button asChild size="lg" variant="outline">
                 <Link href="/">
                   <Home className="mr-2 h-5 w-5" />
                   Return to Home
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline">
-                <Link href="/book">Learn More About the Book</Link>
-              </Button>
             </div>
 
             <div className="mt-12 p-6 bg-muted/30 rounded-lg">
               <p className="text-sm text-muted-foreground">
-                Have questions? Contact us at{" "}
+                Need help? Contact us at{" "}
                 <a
                   href="mailto:contact@princeadeola.com"
                   className="text-primary hover:underline"
@@ -81,4 +83,5 @@ const Success = () => {
   );
 };
 
-export default Success;
+export default Failure;
+

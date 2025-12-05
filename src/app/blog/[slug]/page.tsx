@@ -1,16 +1,12 @@
 import { notFound } from 'next/navigation'
-import { supabase } from '@/lib/supabase-client'
+import { blogs as blogData, type BlogPost as BlogPostType } from '@/data/blogs'
 
-type BlogPost = any
+type BlogPost = BlogPostType | any
 
 export async function generateStaticParams() {
   try {
-    const { data: blogs } = await supabase
-      .from('blogs')
-      .select('slug')
-      .eq('is_published', true);
-
-    return (blogs as any)?.map((blog: any) => ({ slug: blog.slug })) || [];
+    const slugs = blogData.filter(b => b.is_published).map(b => ({ slug: b.slug }));
+    return slugs;
   } catch (error) {
     console.error('Error generating static params:', error);
     return [
@@ -25,14 +21,9 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   const { slug } = resolvedParams;
 
   try {
-    const { data: post, error } = await supabase
-      .from('blogs')
-      .select('*')
-      .eq('slug', slug)
-      .eq('is_published', true)
-      .single();
+    const post = blogData.find(b => b.slug === slug && b.is_published);
 
-    if (error || !post) {
+    if (!post) {
       return notFound();
     }
 

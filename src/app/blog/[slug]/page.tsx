@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import { blogs as blogData, type BlogPost as BlogPostType } from '@/data/blogs'
 
-type BlogPost = BlogPostType | any
+type BlogPost = BlogPostType
 
 export async function generateStaticParams() {
   try {

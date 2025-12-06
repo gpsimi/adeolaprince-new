@@ -130,15 +130,17 @@ export async function GET(req: NextRequest) {
         const amount = json.data?.amount ?? 0;
         const quantity = json.data?.metadata?.quantity ?? 1;
 
-        await sendBrevoMail(
-          to, // email address
-          "Your Book Preorder — Payment Received", // subject
-          `<p>Hi ${name},</p>
-     <p>We received your payment. Reference: <strong>${reference}</strong></p>
-     <p>Amount: <strong>₦${(amount / 100).toFixed(2)}</strong></p>
-     <p>Quantity: ${quantity}</p>
-     <p>Thanks!</p>`
-        );
+        if (to) {
+          await sendBrevoMail(
+            to, // email address
+            "Your Book Preorder — Payment Received", // subject
+            `<p>Hi ${name},</p>
+       <p>We received your payment. Reference: <strong>${reference}</strong></p>
+       <p>Amount: <strong>₦${(amount / 100).toFixed(2)}</strong></p>
+       <p>Quantity: ${quantity}</p>
+       <p>Thanks!</p>`
+          );
+        }
       } catch (e) {
         console.error("email send error:", e);
       }

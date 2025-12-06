@@ -46,7 +46,7 @@ export default function PreorderForm() {
 
   // Ensure Paystack script is loaded
   const ensurePaystackLoaded = () => {
-    if (!(window as any).PaystackPop) {
+    if (!window['PaystackPop']) {
       const s = document.createElement("script");
       s.src = "https://js.paystack.co/v1/inline.js";
       s.async = true;

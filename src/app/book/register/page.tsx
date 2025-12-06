@@ -44,7 +44,7 @@ const Register = () => {
     },
   });
 
-  const onSubmit = async (formData: RegisterFormValues) => {
+  const onSubmit = async (_formData: RegisterFormValues) => {
     try {
       // Here you would typically send the data to your backend API
       // await fetch('/api/register', { method: 'POST', body: JSON.stringify(formData) });

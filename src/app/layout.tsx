@@ -1,6 +1,6 @@
-
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
+import Script from "next/script";
 import './globals.css';
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Navbar from "@/components/Navbar";
@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <script src="https://js.paystack.co/v1/inline.js"></script>
+        <Script src="https://js.paystack.co/v1/inline.js" />
       </head>
       <body className={`${inter.variable} ${playfairDisplay.variable}`}>
         <ThemeProvider

@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { sendBrevoMail } from "@/lib/email"; // <- note path
+import { paymentSuccessTemplate } from "@/lib/email-template";
 
 interface PaystackMetadata {
   order_id?: string;
@@ -72,6 +73,8 @@ export async function GET(req: NextRequest) {
 
     const json: PaystackResponse = await res.json();
 
+    console.log("Paystack verification response:", json);
+
     // If paystack returned success
     const payStatus = json?.data?.status;
 
@@ -127,18 +130,18 @@ export async function GET(req: NextRequest) {
             .filter(Boolean)
             .join(" ") || to;
 
-        const amount = json.data?.amount ?? 0;
         const quantity = json.data?.metadata?.quantity ?? 1;
 
         if (to) {
           await sendBrevoMail(
-            to, // email address
-            "Your Book Preorder — Payment Received", // subject
-            `<p>Hi ${name},</p>
-       <p>We received your payment. Reference: <strong>${reference}</strong></p>
-       <p>Amount: <strong>₦${(amount / 100).toFixed(2)}</strong></p>
-       <p>Quantity: ${quantity}</p>
-       <p>Thanks!</p>`
+            to,
+            "Your Payment Was Successful 🎉",
+            paymentSuccessTemplate({
+              name: name ?? "Customer",
+              reference: reference as string,
+              quantity: Number(quantity) || 1,
+              format: json.data?.metadata?.format ?? "hardcopy",
+            })
           );
         }
       } catch (e) {

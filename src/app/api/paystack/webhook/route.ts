@@ -29,6 +29,8 @@ export async function POST(req: Request) {
 
     const event = JSON.parse(rawBody);
 
+    console.log("Paystack webhook event:", event);
+
     // We only care about successful payments
     if (event.event === "charge.success") {
       const d = event.data;
@@ -73,21 +75,23 @@ export async function POST(req: Request) {
         console.error("❌ Supabase insert error:", insertError);
       }
 
-      // Send Brevo email
-      await sendBrevoMail(
-        email,
-        "Your Book Preorder — Payment Successful",
-        `
-        <p>Hello ${fullName},</p>
-        <p>Your payment was successful! 🎉</p>
-        <p><strong>Reference:</strong> ${d.reference}</p>
-        <p><strong>Amount:</strong> ₦${(d.amount / 100).toLocaleString()}</p>
-        <p><strong>Format:</strong> ${row.format}</p>
-        <br/>
-        <p>Thank you for supporting this book!</p>
-        <p>— Prince Adeola Team</p>
-        `
-      );
+      if (email) {
+        // Send Brevo email
+        await sendBrevoMail(
+          email,
+          "Your Book Preorder — Payment Successful",
+          `
+          <p>Hello ${fullName},</p>
+          <p>Your payment was successful! 🎉</p>
+          <p><strong>Reference:</strong> ${d.reference}</p>
+          <p><strong>Amount:</strong> ₦${(d.amount / 100).toLocaleString()}</p>
+          <p><strong>Format:</strong> ${row.format}</p>
+          <br/>
+          <p>Thank you for supporting this book!</p>
+          <p>— Prince Adeola Team</p>
+          `
+        );
+      }
     }
 
     return NextResponse.json({ received: true });

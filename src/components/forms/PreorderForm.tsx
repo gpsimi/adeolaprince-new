@@ -26,7 +26,14 @@ const preorderSchema = z.object({
   format: z.enum(["hardcopy", "softcopy"], {
     required_error: "Select a format",
   }),
-});
+  deliveryLocation: z.string().trim().optional(),
+}).refine(
+  (data) => data.format !== "hardcopy" || !!data.deliveryLocation,
+  {
+    message: "Delivery address is required for hardcopy",
+    path: ["deliveryLocation"],
+  }
+);
 
 type PreorderFormValues = z.infer<typeof preorderSchema>;
 
@@ -41,6 +48,7 @@ export default function PreorderForm() {
       phone: "",
       quantity: 1,
       format: undefined,
+      deliveryLocation: "",
     } as Partial<PreorderFormValues>,
   });
 
@@ -91,6 +99,8 @@ export default function PreorderForm() {
       setLoading(false);
     }
   };
+  const selectedFormat = form.watch("format");
+
 
   return (
     <Form {...form}>
@@ -176,6 +186,23 @@ export default function PreorderForm() {
           )}
         />
 
+        {selectedFormat === "hardcopy" && (
+          <FormField
+            control={form.control}
+            name="deliveryLocation"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Delivery Address *</FormLabel>
+                <FormControl>
+                  <Input placeholder="Enter delivery address" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        )}
+
+
         <div className="pt-4">
           <Button
             type="submit"
@@ -186,8 +213,8 @@ export default function PreorderForm() {
             {loading
               ? "Processing..."
               : form.getValues("format") === "softcopy"
-              ? "Proceed to Selar"
-              : "Proceed to Payment"}
+                ? "Proceed to Selar"
+                : "Proceed to Payment"}
           </Button>
         </div>
       </form>

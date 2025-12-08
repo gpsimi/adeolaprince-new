@@ -46,8 +46,8 @@ export async function POST(req: NextRequest) {
 
     // 2️⃣ INITIALIZE PAYSTACK
     const callbackUrl = BASE_URL
-      ? `${BASE_URL}/payment/callback`
-      : `${req.nextUrl.origin}/payment/callback`;
+      ? `${BASE_URL}/api/paystack/callback`
+      : `${req.nextUrl.origin}/api/paystack/callback`;
 
     const initializeRes = await fetch("https://api.paystack.co/transaction/initialize", {
       method: "POST",

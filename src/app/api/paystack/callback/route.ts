@@ -45,21 +45,23 @@ interface PreorderUpdatePayload {
 const PAYSTACK_SECRET: string = process.env.PAYSTACK_SECRET_KEY!;
 const SUPABASE_URL: string = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SUPABASE_SERVICE_ROLE_KEY: string = process.env.SUPABASE_SERVICE_ROLE_KEY!;
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "";
 
 const supabaseAdmin = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, {
   auth: { persistSession: false },
 });
 
 export async function GET(req: NextRequest) {
+  const failureUrl = BASE_URL ? `${BASE_URL}/book/failure` : new URL("/book/failure", req.url).toString();
+  const successUrl = BASE_URL ? `${BASE_URL}/book/success` : new URL("/book/success", req.url).toString();
+
   try {
     const { searchParams } = new URL(req.url);
     const reference = searchParams.get("reference");
-    // If Paystack sent a status param (some flows): use it
-
 
     if (!reference) {
-      // nothing to verify, redirect to failure
-      return NextResponse.redirect("/book/failure");
+      console.error("No reference found in callback query params");
+      return NextResponse.redirect(failureUrl);
     }
 
     // Verify with Paystack
@@ -122,7 +124,6 @@ export async function GET(req: NextRequest) {
       }
 
       // send email (fire & forget)
-      // send email (fire & forget)
       try {
         const to = json.data?.customer?.email;
         const name =
@@ -145,17 +146,17 @@ export async function GET(req: NextRequest) {
           );
         }
       } catch (e) {
-        console.error("email send error:", e);
+        console.error("Email send error:", e);
       }
 
-
-      return NextResponse.redirect("/book/success");
+      return NextResponse.redirect(successUrl);
     }
 
     // default: failure
-    return NextResponse.redirect("/book/failure");
+    console.error("Paystack transaction was not successful", { status: payStatus, reference });
+    return NextResponse.redirect(failureUrl);
   } catch (err) {
-    console.error("callback route error:", err);
-    return NextResponse.redirect("/book/failure");
+    console.error("Callback route error:", err);
+    return NextResponse.redirect(failureUrl);
   }
 }

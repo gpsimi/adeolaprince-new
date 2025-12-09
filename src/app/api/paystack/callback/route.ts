@@ -2,7 +2,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { createClient } from "@supabase/supabase-js";
-import { sendBrevoMail } from "@/lib/email"; // <- note path
+import { sendResendMail } from "@/lib/resend";
 import { paymentSuccessTemplate } from "@/lib/email-template";
 
 interface PaystackMetadata {
@@ -134,7 +134,7 @@ export async function GET(req: NextRequest) {
         const quantity = json.data?.metadata?.quantity ?? 1;
 
         if (to) {
-          await sendBrevoMail(
+          await sendResendMail(
             to,
             "Your Payment Was Successful 🎉",
             paymentSuccessTemplate({

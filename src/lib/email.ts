@@ -2,16 +2,11 @@
 
 import Brevo from "@getbrevo/brevo";
 
-const apiInstance = new Brevo.TransactionalEmailsApi();
-apiInstance.setApiKey(Brevo.TransactionalEmailsApiApiKeys.apiKey, process.env.BREVO_API_KEY!);
-
 export async function sendBrevoMail(to: string, subject: string, htmlContent: string) {
-  // TEMPORARY DEBUG LOGGING
-  console.log("--- DEBUG: CHECKING BREVO ENV VARS ---");
-  console.log("BREVO_API_KEY (first 5 chars):", process.env.BREVO_API_KEY?.substring(0, 5));
-  console.log("FROM_EMAIL:", process.env.FROM_EMAIL);
-  console.log("------------------------------------");
-
+  // Re-initialize client on every call to ensure fresh env vars are used
+  const apiInstance = new Brevo.TransactionalEmailsApi();
+  apiInstance.setApiKey(Brevo.TransactionalEmailsApiApiKeys.apiKey, process.env.BREVO_API_KEY!);
+  
   const email = new Brevo.SendSmtpEmail();
 
   email.to = [{ email: to }];

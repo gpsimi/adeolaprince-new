@@ -7,7 +7,8 @@ export const runtime = "nodejs";
 import { NextResponse } from "next/server";
 import crypto from "crypto";
 import { supabaseAdmin } from "@/lib/supabase-admin";
-import { sendBrevoMail } from "@/lib/email";
+import { sendResendMail } from "@/lib/resend";
+import { paymentSuccessTemplate } from "@/lib/email-template";
 
 const PAYSTACK_SECRET = process.env.PAYSTACK_SECRET_KEY!;
 
@@ -76,20 +77,15 @@ export async function POST(req: Request) {
       }
 
       if (email) {
-        // Send Brevo email
-        await sendBrevoMail(
+        await sendResendMail(
           email,
           "Your Book Preorder — Payment Successful",
-          `
-          <p>Hello ${fullName},</p>
-          <p>Your payment was successful! 🎉</p>
-          <p><strong>Reference:</strong> ${d.reference}</p>
-          <p><strong>Amount:</strong> ₦${(d.amount / 100).toLocaleString()}</p>
-          <p><strong>Format:</strong> ${row.format}</p>
-          <br/>
-          <p>Thank you for supporting this book!</p>
-          <p>— Prince Adeola Team</p>
-          `
+          paymentSuccessTemplate({
+            name: fullName,
+            reference: d.reference,
+            quantity: Number(d.metadata?.quantity || 1),
+            format: row.format,
+          })
         );
       }
     }

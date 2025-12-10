@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { sendResendMail } from "@/lib/resend";
+import { adminNotificationTemplate } from "@/lib/admin-email-template";
 import { paymentSuccessTemplate } from "@/lib/email-template";
 
 interface PaystackMetadata {
@@ -144,31 +145,21 @@ export async function GET(req: NextRequest) {
 
         // 2. Send Admin Notification Email
         try {
-          const adminEmails = ['gpsimi01@gmail.com', 'adeolaprincezz@yahoo.com'];
-          const { full_name, email, phone, quantity, format, delivery_location } = orderData;
+          const adminEmails = ['adeolaprincezz@yahoo.com', 'gpsimi01@gmail.com'];
           
-          const adminHtmlContent = `
-            <div style="font-family: sans-serif; padding: 20px; color: #333;">
-              <h2 style="color: #000;">New Book Pre-order Received!</h2>
-              <p>A new pre-order has been successfully paid for and confirmed.</p>
-              <hr style="border: 1px solid #eee;">
-              <h3 style="margin-bottom: 10px;">Order Details:</h3>
-              <ul style="list-style-type: none; padding: 0;">
-                <li style="margin-bottom: 8px;"><strong>Full Name:</strong> ${full_name}</li>
-                <li style="margin-bottom: 8px;"><strong>Email:</strong> ${email}</li>
-                <li style="margin-bottom: 8px;"><strong>Phone:</strong> ${phone || 'Not provided'}</li>
-                <li style="margin-bottom: 8px;"><strong>Quantity:</strong> ${quantity}</li>
-                <li style="margin-bottom: 8px;"><strong>Format:</strong> ${format}</li>
-                ${format === 'hardcopy' ? `<li style="margin-bottom: 8px;"><strong>Delivery Address:</strong> ${delivery_location || 'Not provided'}</li>` : ''}
-                <li style="margin-bottom: 8px;"><strong>Paystack Ref:</strong> ${reference}</li>
-              </ul>
-              <p style="font-size: 0.9em; color: #777;">This is an automated notification from the website.</p>
-            </div>
-          `;
+          const adminHtmlContent = adminNotificationTemplate({
+            fullName: orderData.full_name,
+            email: orderData.email,
+            phone: orderData.phone,
+            quantity: orderData.quantity,
+            format: orderData.format,
+            deliveryLocation: orderData.delivery_location,
+            reference: reference as string
+          });
 
           await sendResendMail(
             adminEmails,
-            `[New Pre-Order] For "${full_name}"`,
+            `[New Pre-Order] For "${orderData.full_name}"`,
             adminHtmlContent
           );
         } catch (e) {

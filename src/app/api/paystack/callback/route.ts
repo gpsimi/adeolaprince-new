@@ -167,7 +167,7 @@ export async function GET(req: NextRequest) {
           `;
 
           await sendResendMail(
-            adminEmails.join(','),
+            adminEmails,
             `[New Pre-Order] For "${full_name}"`,
             adminHtmlContent
           );

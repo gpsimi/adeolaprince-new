@@ -3,7 +3,7 @@ import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export async function sendResendMail(to: string, subject: string, htmlContent: string) {
+export async function sendResendMail(to: string | string[], subject: string, htmlContent: string) {
   try {
     const fromAddress = process.env.FROM_NAME 
       ? `${process.env.FROM_NAME} <${process.env.FROM_EMAIL}>` 

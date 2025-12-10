@@ -13,7 +13,7 @@ const Home = () => {
       <AuthorSection />
       <TestimonialsSection />
       <CTASection />
-      <CTASection variant="secondary" />
+      {/* <CTASection variant="secondary" /> */}
     </div>
   );
 };

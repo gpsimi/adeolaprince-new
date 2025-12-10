@@ -62,7 +62,7 @@ const CTASection = ({ variant = "primary" }: CTASectionProps) => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" variant="secondary" className="min-w-[200px] shadow-elegant">
-              <Link href="/preorder">
+              <Link href="/book/preorder">
                 <ShoppingCart className="mr-2 h-5 w-5" />
                 Preorder Your Copy
               </Link>

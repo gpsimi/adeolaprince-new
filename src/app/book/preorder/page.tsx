@@ -40,30 +40,6 @@ const Preorder = () => {
 
               <PreorderForm />
 
-              <div className="mt-8 text-sm text-muted-foreground text-center">
-                <p>Secure payment powered by Paystack</p>
-                <p className="mt-2">
-                  By proceeding, you agree to receive order updates via email and SMS
-                </p>
-              </div>
-            </div>
-
-            {/* Integration Note */}
-            <div className="mt-12 p-6 bg-muted/50 rounded-lg border border-border">
-              <h3 className="font-semibold mb-2">Payment Integration Note</h3>
-              <p className="text-sm text-muted-foreground mb-2">
-                To complete the Paystack integration:
-              </p>
-              <ol className="text-sm text-muted-foreground space-y-2 list-decimal list-inside">
-                <li>Add Paystack inline script to index.html:
-                  <code className="block mt-1 p-2 bg-background rounded text-xs">
-                    {`<script src="https://js.paystack.co/v1/inline.js"></script>`}
-                  </code>
-                </li>
-                <li>Replace "pk_test_xxxxxxxxxxxx" with your actual Paystack public key</li>
-                <li>Configure webhook in your backend to handle payment verification</li>
-                <li>Store preorder details in your database after successful payment</li>
-              </ol>
             </div>
           </motion.div>
         </div>

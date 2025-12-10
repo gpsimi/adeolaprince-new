@@ -80,77 +80,107 @@ export async function GET(req: NextRequest) {
     // If paystack returned success
     const payStatus = json?.data?.status;
 
-    if (payStatus === "success") {
-      // find order id from metadata (if you passed it) or update by reference
+      // --- Main Logic: Find the original order record and update it ---
       const orderId = json.data?.metadata?.order_id ?? null;
-      const updatePayload: PreorderUpdatePayload = {
-        paystack_reference: reference,
-        paystack_status: "success",
-        meta: { metadata: json.data?.metadata, paystack: json.data },
-      };
+      let orderData = null;
 
       if (orderId) {
-        await supabaseAdmin.from("preorders").update(updatePayload).eq("id", orderId);
-      } else {
-        const { data: existingRecords } = await supabaseAdmin
+        const { data, error } = await supabaseAdmin
           .from("preorders")
-          .select("id")
-          .eq("paystack_reference", reference);
-
-        if (existingRecords && existingRecords.length > 0) {
-          // If a record with this reference exists, update it
-          await supabaseAdmin.from("preorders").update(updatePayload).eq("paystack_reference", reference);
-        } else {
-          // No existing record found, insert a new one
-          const customerEmail = json.data?.customer?.email;
-          const customerFirstName = json.data?.customer?.first_name;
-          const customerLastName = json.data?.customer?.last_name;
-          const fullName = [customerFirstName, customerLastName].filter(Boolean).join(" ") || customerEmail || "Customer";
-          const quantity = Number(json.data?.metadata?.quantity ?? 1);
-
-          await supabaseAdmin.from("preorders").insert({
-            full_name: fullName,
-            email: customerEmail,
-            phone: json.data?.customer?.phone ?? null,
-            quantity: quantity,
-            amount: json.data?.amount,
-            currency: json.data?.currency ?? "NGN",
+          .update({
             paystack_reference: reference,
             paystack_status: "success",
-            format: json.data?.metadata?.format ?? "hardcopy",
-            meta: { paystack: json.data },
-          });
+            meta: { metadata: json.data?.metadata, paystack: json.data },
+          })
+          .eq("id", orderId)
+          .select()
+          .single();
+
+        if (error) {
+          console.error("Failed to update preorder by ID:", { orderId, error });
         }
+        orderData = data;
+
+      } else {
+        // --- Fallback Logic for older/unlinked transactions ---
+        const { data: existing, error: findError } = await supabaseAdmin
+          .from("preorders")
+          .update({
+            paystack_status: "success",
+            meta: { metadata: json.data?.metadata, paystack: json.data },
+          })
+          .eq("paystack_reference", reference)
+          .select()
+          .single();
+        
+        if(findError) {
+           console.error("Failed to update preorder by reference:", { reference, findError });
+        }
+        orderData = existing;
       }
 
-      // send email (fire & forget)
-      try {
-        const to = json.data?.customer?.email;
-        const name =
-          [json.data?.customer?.first_name, json.data?.customer?.last_name]
-            .filter(Boolean)
-            .join(" ") || to;
+      // --- Send emails (fire & forget) ---
+      if (orderData) {
+        // 1. Send Customer Confirmation Email
+        try {
+          const to = orderData.email;
+          if (to) {
+            await sendResendMail(
+              to,
+              "Your Payment Was Successful 🎉",
+              paymentSuccessTemplate({
+                name: orderData.full_name ?? "Customer",
+                reference: reference as string,
+                quantity: orderData.quantity ?? 1,
+                format: orderData.format ?? "hardcopy",
+                baseUrl: BASE_URL || req.nextUrl.origin,
+              })
+            );
+          }
+        } catch (e) {
+          console.error("Customer email send error:", e);
+        }
 
-        const quantity = json.data?.metadata?.quantity ?? 1;
+        // 2. Send Admin Notification Email
+        try {
+          const adminEmails = ['gpsimi01@gmail.com', 'adeolaprincezz@yahoo.com'];
+          const { full_name, email, phone, quantity, format, delivery_location } = orderData;
+          
+          const adminHtmlContent = `
+            <div style="font-family: sans-serif; padding: 20px; color: #333;">
+              <h2 style="color: #000;">New Book Pre-order Received!</h2>
+              <p>A new pre-order has been successfully paid for and confirmed.</p>
+              <hr style="border: 1px solid #eee;">
+              <h3 style="margin-bottom: 10px;">Order Details:</h3>
+              <ul style="list-style-type: none; padding: 0;">
+                <li style="margin-bottom: 8px;"><strong>Full Name:</strong> ${full_name}</li>
+                <li style="margin-bottom: 8px;"><strong>Email:</strong> ${email}</li>
+                <li style="margin-bottom: 8px;"><strong>Phone:</strong> ${phone || 'Not provided'}</li>
+                <li style="margin-bottom: 8px;"><strong>Quantity:</strong> ${quantity}</li>
+                <li style="margin-bottom: 8px;"><strong>Format:</strong> ${format}</li>
+                ${format === 'hardcopy' ? `<li style="margin-bottom: 8px;"><strong>Delivery Address:</strong> ${delivery_location || 'Not provided'}</li>` : ''}
+                <li style="margin-bottom: 8px;"><strong>Paystack Ref:</strong> ${reference}</li>
+              </ul>
+              <p style="font-size: 0.9em; color: #777;">This is an automated notification from the website.</p>
+            </div>
+          `;
 
-        if (to) {
           await sendResendMail(
-            to,
-            "Your Payment Was Successful 🎉",
-            paymentSuccessTemplate({
-              name: name ?? "Customer",
-              reference: reference as string,
-              quantity: Number(quantity) || 1,
-              format: json.data?.metadata?.format ?? "hardcopy",
-            })
+            adminEmails.join(','),
+            `[New Pre-Order] For "${full_name}"`,
+            adminHtmlContent
           );
+        } catch (e) {
+          console.error("Admin email send error:", e);
         }
-      } catch (e) {
-        console.error("Email send error:", e);
-      }
 
+      } else {
+        console.error("Could not find or update order record after successful payment.", { reference });
+      }
+      
       return NextResponse.redirect(successUrl);
     }
+
 
     // default: failure
     console.error("Paystack transaction was not successful", { status: payStatus, reference });

@@ -80,15 +80,11 @@ const Footer = () => {
             <h4 className="font-semibold mb-3">Get in Touch</h4>
             <ul className="space-y-2 text-muted-foreground">
               <li>
-                <a href="mailto:contact@princeadeola.com" className="hover:text-primary transition-colors">
+                <a href="mailto:adeolaprincezz@yahoo.com" className="hover:text-primary transition-colors">
                   contact@princeadeola.com
                 </a>
               </li>
-              <li>
-                <Link href="/register" className="hover:text-primary transition-colors">
-                  Event Registration
-                </Link>
-              </li>
+              
             </ul>
           </div>
         </div>

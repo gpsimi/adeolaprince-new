@@ -11,6 +11,7 @@ import { sendResendMail } from "@/lib/resend";
 import { paymentSuccessTemplate } from "@/lib/email-template";
 
 const PAYSTACK_SECRET = process.env.PAYSTACK_SECRET_KEY!;
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "";
 
 export async function POST(req: Request) {
   try {
@@ -85,6 +86,7 @@ export async function POST(req: Request) {
             reference: d.reference,
             quantity: Number(d.metadata?.quantity || 1),
             format: row.format,
+            baseUrl: BASE_URL,
           })
         );
       }

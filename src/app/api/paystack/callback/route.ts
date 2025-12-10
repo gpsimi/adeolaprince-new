@@ -80,6 +80,7 @@ export async function GET(req: NextRequest) {
     // If paystack returned success
     const payStatus = json?.data?.status;
 
+    if (payStatus === "success") {
       // --- Main Logic: Find the original order record and update it ---
       const orderId = json.data?.metadata?.order_id ?? null;
       let orderData = null;

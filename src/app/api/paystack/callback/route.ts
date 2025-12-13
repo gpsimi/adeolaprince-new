@@ -129,7 +129,7 @@ export async function GET(req: NextRequest) {
           if (to) {
             await sendResendMail(
               to,
-              "Welcome to Curriculum of Light! 💡🎉",
+              "Welcome to the Curriculum of Light! 💡🎉",
               paymentSuccessTemplate({
                 name: orderData.full_name ?? "Customer",
                 reference: reference as string,

@@ -4,7 +4,7 @@ import { Heart, BookOpen, Users} from "lucide-react";
 
 
 
-const MissionMinistry = () => {
+const MissionVision = () => {
   return (
     <section className="py-20 md:py-32 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -15,9 +15,9 @@ const MissionMinistry = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">Mission & Ministry</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">Mission & Vision</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Empowering believers to live authentically in their divine calling
+              Bringing light and luminous intensity to a dark world, and dark minds across strata's and generations.
             </p>
           </motion.div>
 
@@ -72,4 +72,4 @@ const MissionMinistry = () => {
   )
 }
 
-export default MissionMinistry
+export default MissionVision

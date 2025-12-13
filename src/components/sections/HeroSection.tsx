@@ -38,7 +38,7 @@ const HeroSection = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl text-balance text-center lg:text-left"
             >
-              A global speaker, astute saxophonists and prolific Writer,
+              A global speaker, astute saxophonist and prolific Writer,
               who is focused on shifting people&apos;s mindsets so they
               can see possibilities and become those possibilities.
             </motion.p>

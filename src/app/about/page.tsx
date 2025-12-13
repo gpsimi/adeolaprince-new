@@ -1,6 +1,7 @@
 'use client'
 
-import { AboutBio, AboutHero, MissionMinistry } from "@/components/page/about";
+import { AboutBio, AboutHero, MissionVision } from "@/components/page/about";
+
 
 
 const About = () => {
@@ -8,7 +9,7 @@ const About = () => {
     <div className="min-h-screen pt-20">
       <AboutHero />
       <AboutBio />
-      <MissionMinistry />
+      <MissionVision />
     </div>
   );
 };

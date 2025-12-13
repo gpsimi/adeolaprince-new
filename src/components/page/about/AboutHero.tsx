@@ -41,7 +41,7 @@ const AboutHero = () => {
           >
             <h1 className="text-4xl md:text-6xl font-bold mb-6">Adeola Prince</h1>
             <p className="text-xl text-muted-foreground mb-8">
-              A global speaker, Astute saxophonists and Prolific Writer,
+              A global speaker, Astute saxophonist and Prolific Writer,
             </p>
             <p className="text-lg text-muted-foreground mb-8">
               He balances a career in aircraft engineering, music, and a profound

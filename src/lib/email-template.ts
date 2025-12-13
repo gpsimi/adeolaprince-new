@@ -91,7 +91,7 @@ export function paymentSuccessTemplate({
       </div>
       <div class="content">
         <h2 style="font-size: 20px; color: #2c3e50;">Hi ${name},</h2>
-        <p>Thank you for your support! We've successfully received your payment for the book preorder.</p>
+        <p>Congratulations on embarking on this Journey. Thank you for purchase!</p>
         <div class="details">
           <p><strong>Reference:</strong> ${reference}</p>
           <p><strong>Quantity:</strong> ${quantity}</p>

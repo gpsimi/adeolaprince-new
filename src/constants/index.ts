@@ -15,14 +15,16 @@ export const navLinks = [
 
 
 export const learnings = [
-    "Discover your true identity in Christ and embrace your divine purpose",
-    "Navigate spiritual seasons with wisdom and discernment",
-    "Break free from limitations and step into abundant living",
-    "Develop authentic relationships that foster spiritual growth",
-    "Cultivate practices that deepen your walk with God",
-    "Transform challenges into opportunities for becoming",
-    "Align your daily life with your spiritual calling",
-    "Experience genuine transformation, not just information",
+    "Understand what is light (literally, figuratively, and spiritually )",
+    "Understand what is not light (literally, figuratively, and spiritually)",
+    "Discover if what you see is actually what is there ",
+    "Discover how lenses color your perception",
+    "How light informs your everyday decisions and ultimately the type of person you become and where you end up.",
+    "Come to terms with what it means to bright light to a dark world.",
+    "Break free from limitations and step into luminous living.",
+    "Learn how to navigate as dark world. ",
+    "Understand the implications of light.",
+    "Discover what is True light (The light of life)",
 ];
 
 

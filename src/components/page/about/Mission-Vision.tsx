@@ -17,7 +17,7 @@ const MissionVision = () => {
           >
             <h2 className="text-3xl md:text-5xl font-bold mb-6">Mission & Vision</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Bringing light and luminous intensity to a dark world, and dark minds across strata's and generations.
+              Bringing light to a dark alleys, minds, systems, and cultures of the world. Making the world a better place than we met it, one person at a time. 
             </p>
           </motion.div>
 
@@ -32,8 +32,8 @@ const MissionVision = () => {
               <Heart className="h-12 w-12 text-primary mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-3">Heart for Transformation</h3>
               <p className="text-muted-foreground">
-                Passionate about seeing lives transformed by the power of God's truth
-                and experiencing genuine spiritual breakthrough.
+                Passionate about bringing illumination to the dark alleys of the mind 
+                through the accurate display of Truth.
               </p>
             </motion.div>
 
@@ -47,8 +47,10 @@ const MissionVision = () => {
               <BookOpen className="h-12 w-12 text-primary mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-3">Biblical Foundation</h3>
               <p className="text-muted-foreground">
-                Committed to teaching sound biblical doctrine combined with practical
-                application for daily living.
+                Anchored in orthodox (original) faith just as it was handed down 
+                to the Apostles and the Apostolic Fathers. Walking the narrow line 
+                between unwavering fidelity to original doctrine and a strong 
+                emphasis on its practical application.
               </p>
             </motion.div>
 
@@ -62,8 +64,10 @@ const MissionVision = () => {
               <Users className="h-12 w-12 text-primary mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-3">Global Impact</h3>
               <p className="text-muted-foreground">
-                Reaching believers worldwide through teaching, writing, and ministry
-                that transcends cultural boundaries.
+                Beaming light throughout the cosmos and its inhabitants through 
+                teaching, writing, training, and deploying individuals and nations 
+                who are uncompromisingly true to objective Truth and who transcend 
+                the borders of culture and religion.
               </p>
             </motion.div>
           </div>

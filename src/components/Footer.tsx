@@ -14,9 +14,12 @@ const Footer = () => {
           <div className="md:col-span-2">
             <h3 className="text-xl font-serif font-bold mb-3">Adeola Prince</h3>
             <p className="text-muted-foreground mb-4 max-w-md">
-              A transformative journey through faith, purpose, and spiritual growth.
-              Join Adeola Prince on a path that leads to deeper understanding
-              and authentic becoming.
+              A transformative journey through faith, logic, science with the aim 
+              of finding purpose (why are we here?), understanding destiny (where are we going?), 
+              identity (who are we?), and ultimately circular growth. 
+              <br />
+              Join Prince Adeola on the path of light, where deep 
+              understanding resides, and authentic becoming is possible.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((item, index) => (

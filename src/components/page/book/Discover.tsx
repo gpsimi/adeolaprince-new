@@ -1,7 +1,6 @@
 import { MotionDiv, MotionSection } from '@/components/MotionWrapper'
 import { learnings } from '@/constants'
 import { Check } from 'lucide-react'
-import React from 'react'
 
 const Discover = () => {
     return (

@@ -14,8 +14,8 @@ const Footer = () => {
           <div className="md:col-span-2">
             <h3 className="text-xl font-serif font-bold mb-3">Adeola Prince</h3>
             <p className="text-muted-foreground mb-4 max-w-md">
-              A transformative journey blending faith, logic, and science to explore 
-              purpose (why are we here?), destiny (where are we going?), identity (who are we?), 
+              A transformative journey blending faith, logic, and science to explore
+              purpose (why are we here?), destiny (where are we going?), identity (who are we?),
               and circular growth.
               <br />
               <br />
@@ -87,7 +87,7 @@ const Footer = () => {
                   contact@princeadeola.com
                 </a>
               </li>
-              
+
             </ul>
           </div>
         </div>

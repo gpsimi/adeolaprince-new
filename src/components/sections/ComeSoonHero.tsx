@@ -57,7 +57,7 @@ export default function ComeSoonHero() {
                     </h2>
                     <p className="mt-4 text-lg text-foreground">Weekly essays, reflections and exclusive pieces — arrive first by joining the waitlist.</p>
 
-                    <form onSubmit={joinWaitlist} className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+                    {/* <form onSubmit={joinWaitlist} className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
                         <Input
                             aria-label="Your name"
                             value={name}
@@ -75,7 +75,7 @@ export default function ComeSoonHero() {
                         <Button type="submit" className="whitespace-nowrap" disabled={loading}>
                             {loading ? "Joining..." : "Notify Me ✉️"}
                         </Button>
-                    </form>
+                    </form> */}
 
                     <p className="mt-4 text-sm text-slate-500 dark:text-slate-400">No spam — unsubscribe anytime 🚫</p>
                 </div>

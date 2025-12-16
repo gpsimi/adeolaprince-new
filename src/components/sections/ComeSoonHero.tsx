@@ -77,7 +77,7 @@ export default function ComeSoonHero() {
                         </Button>
                     </form> */}
 
-                    <p className="mt-4 text-sm text-slate-500 dark:text-slate-400">No spam — unsubscribe anytime 🚫</p>
+                    {/* <p className="mt-4 text-sm text-slate-500 dark:text-slate-400">No spam — unsubscribe anytime 🚫</p> */}
                 </div>
             </div>
         </section>

@@ -47,7 +47,7 @@ export default function ComeSoonHero() {
             <div className="max-w-4xl mx-auto">
                 <div className="rounded-2xl p-10 md:p-16 text-center">
                     <div className="mb-6 text-6xl md:text-7xl lg:text-8xl font-extrabold leading-tight tracking-tight font-serif text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-sky-500 to-rose-500">
-                        C.O.A.P 
+                        C.O.A.P
                         {/* <span className="ml-3 drop-shadow-lg">📖✨</span> */}
                     </div>
 
@@ -55,7 +55,10 @@ export default function ComeSoonHero() {
                         Chronicles Of A Prince
                         <span className="ml-3 drop-shadow-lg">is Coming Soon✨</span>
                     </h2>
-                    <p className="mt-4 text-lg text-foreground">Weekly essays, reflections and exclusive pieces — arrive first by joining the waitlist.</p>
+                    <p className="mt-4 text-lg text-foreground ">
+                        Weekly Newsletter and exclusive pieces. <br />
+                        Join Prince Adeola on the path of light for deep understanding and authentic becoming.
+                    </p>
 
                     {/* <form onSubmit={joinWaitlist} className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
                         <Input

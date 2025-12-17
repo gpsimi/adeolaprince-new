@@ -35,7 +35,10 @@ const Preorder = () => {
                 <p className="text-muted-foreground mb-3">
                   Hello, I am Light by Adeola Prince
                 </p>
-                <p className="text-2xl font-bold text-primary">₦2,500 per copy</p>
+                <p className="text-2xl font-bold text-primary">₦8,000 Preorder price</p>
+                <p className="text-muted-foreground text-lg mb-1">
+                   <span className="line-through">₦10,000</span>
+                </p>
               </div>
 
               <PreorderForm />

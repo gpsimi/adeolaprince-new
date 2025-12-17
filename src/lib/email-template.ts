@@ -11,7 +11,7 @@ export function paymentSuccessTemplate({
   format: string;
   baseUrl: string;
 }) {
-  const avatarUrl = `${baseUrl}/images/hero-portrait-1.jpg`;
+  const avatarUrl = `${baseUrl}/images/hero-portrait-6.jpg`;
 
   return `
 <!DOCTYPE html>

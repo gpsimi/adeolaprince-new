@@ -55,6 +55,11 @@ export default function ComeSoonHero() {
                         Chronicles Of A Prince
                         <span className="ml-3 drop-shadow-lg">is Coming Soon✨</span>
                     </h2>
+                    {/* <p className="mt-4 text-lg text-foreground ">
+                        Weekly Newsletter and exclusive pieces. <br />
+                        Join Prince Adeola on the path of light for deep understanding and authentic becoming.
+                    </p> */}
+
                     {/* <form onSubmit={joinWaitlist} className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
                         <Input
                             aria-label="Your name"

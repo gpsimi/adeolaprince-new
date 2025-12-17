@@ -26,9 +26,9 @@ export default function ContactPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-12">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact</h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact Me</h1>
               <p className="text-lg text-muted-foreground">
-                For bookings, speaking engagements or collaborations, send a message below.
+                For inquiries regarding bookings, speaking engagements, or collaborations, please leave a message below.
               </p>
             </div>
 

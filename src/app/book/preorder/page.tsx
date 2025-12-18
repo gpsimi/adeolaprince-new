@@ -2,8 +2,9 @@
 
 import { motion } from "framer-motion";
 
-import PreorderForm  from "@/components/forms/PreorderForm";
+import PreorderForm from "@/components/forms/PreorderForm";
 import { ShoppingCart } from "lucide-react";
+import Image from "next/image";
 
 
 
@@ -30,16 +31,33 @@ const Preorder = () => {
             </div>
 
             <div className="bg-card p-8 rounded-lg shadow-elegant">
-              <div className="mb-8 p-6 bg-primary/5 rounded-lg border border-primary/20">
-                <h3 className="font-semibold text-lg mb-2">Book Details</h3>
-                <p className="text-muted-foreground mb-3">
-                  Hello, I am Light by Adeola Prince
-                </p>
-                <p className="text-2xl font-bold text-primary">₦8,000 Preorder price</p>
-                <p className="text-muted-foreground text-lg mb-1">
-                   <span className="line-through">₦10,000</span>
-                </p>
+
+              <div className="mb-8 p-6 bg-primary/5 rounded-lg border border-primary/20 flex flex-col-reverse md:flex-row items-center justify-between gap-6">
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">Book Details</h3>
+                  <p className="text-muted-foreground mb-3">
+                    Hello, I am Light by Adeola Prince
+                  </p>
+                  <p className="text-2xl font-bold text-primary">₦8,000 Preorder price</p>
+                  <p className="text-muted-foreground text-lg mb-1">
+                    <span className="line-through">₦10,000</span>
+                  </p>
+                </div>
+                <div>
+                  <Image
+                    src="/images/3d-cover.jpg"
+                    alt="Book Cover - Hello, I am Light"
+                    width={250}
+                    height={250}
+                    className="object-cover rounded-lg shadow-lg"
+                  />
+                </div>
               </div>
+
+
+
+
+
 
               <PreorderForm />
 

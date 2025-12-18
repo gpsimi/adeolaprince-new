@@ -8,6 +8,7 @@ import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { navLinks } from "@/constants";
+import Image from "next/image";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -64,7 +65,14 @@ const Navbar = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 md:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2 group">
+          <Link href="/" className="flex items-center group">
+            <Image 
+              src="/images/logos/logo.png"
+              alt="Logo"
+              width={40}
+              height={40}
+              className="rounded-full object-cover group-hover:scale-105 transition-transform"
+            />
             <span className="text-xl md:text-2xl font-serif font-bold text-foreground group-hover:text-primary transition-colors">
               Prince Adeola 
             </span>

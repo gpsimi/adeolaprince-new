@@ -66,7 +66,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group">
             <span className="text-xl md:text-2xl font-serif font-bold text-foreground group-hover:text-primary transition-colors">
-              Adeola Prince
+              Prince Adeola 
             </span>
           </Link>
 

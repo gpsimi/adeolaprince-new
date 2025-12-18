@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { footerLinks, socialLinks } from "@/constants";
+import Image from "next/image";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -12,7 +13,17 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand Section */}
           <div className="md:col-span-2">
-            <h3 className="text-xl font-serif font-bold mb-3">Prince Adeola</h3>
+
+            <Link href="/" className="flex items-center group mb-3">
+              <Image
+                src="/images/logos/logo.png"
+                alt="Logo"
+                width={30}
+                height={30}
+                className=" object-cover"
+              />
+              <span className="text-xl md:text-2xl font-serif font-bold">Prince Adeola</span>
+            </Link>
             <p className="text-muted-foreground mb-4 max-w-md">
               A transformative journey blending faith, logic, and science to explore
               purpose (why are we here?), destiny (where are we going?), identity (who are we?),

@@ -71,9 +71,9 @@ const Navbar = () => {
               alt="Logo"
               width={40}
               height={40}
-              className="rounded-full object-cover group-hover:scale-105 transition-transform"
+              className=" object-cover "
             />
-            <span className="text-xl md:text-2xl font-serif font-bold text-foreground group-hover:text-primary transition-colors">
+            <span className="text-xl md:text-2xl font-serif font-bold">
               Prince Adeola 
             </span>
           </Link>

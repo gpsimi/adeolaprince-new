@@ -49,7 +49,7 @@ const Preorder = () => {
                     alt="Book Cover - Hello, I am Light"
                     width={250}
                     height={250}
-                    className="object-cover rounded-lg shadow-lg"
+                    className="object-cover max-md:w-full rounded-lg shadow-lg"
                   />
                 </div>
               </div>

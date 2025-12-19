@@ -67,11 +67,11 @@ const Navbar = () => {
           {/* Logo */}
           <Link href="/" className="flex items-center group">
             <Image 
-              src="/images/logos/logo.png"
+              src="/images/logos/Logo.png"
               alt="Logo"
               width={40}
               height={40}
-              className=" object-cover "
+              className="object-cover"
             />
             <span className="text-xl md:text-2xl font-serif font-bold">
               Prince Adeola 

@@ -16,11 +16,11 @@ const Footer = () => {
 
             <Link href="/" className="flex items-center group mb-3">
               <Image
-                src="/images/logos/logo.png"
+                src="/images/logos/Logo.png"
                 alt="Logo"
                 width={30}
                 height={30}
-                className=" object-cover"
+                className="object-cover"
               />
               <span className="text-xl md:text-2xl font-serif font-bold">Prince Adeola</span>
             </Link>

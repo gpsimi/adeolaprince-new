@@ -69,7 +69,7 @@ export default function PreorderForm() {
   const onSubmit = async (data: PreorderFormValues) => {
     if (data.format === "softcopy") {
       // simple redirect to Selar
-      window.location.href = "https://selar.co/YOUR-SOFTCOPY-LINK";
+      window.location.href = "https://selar.com/6764470664";
       return;
     }
 

@@ -16,12 +16,12 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Adeola Prince - Global Speaker || Saxophonist || Author",
-  description: "Witer and Global Speaker - Adeola Prince. A transformative Speaker and Writer on Spiritual growth, faith, and purpose. Preorder your copy today.",
-  authors: [{ name: "Adeola Prince" }],
-  keywords: ["Hello, I am Light - It is Light to meet you", "Adeola Prince", "spiritual growth", "faith", "Christian book", "preorder"],
+  title: "Prince Adeola - Global Speaker || Saxophonist || Author",
+  description: "Witer and Global Speaker - Prince Adeola. A transformative Speaker and Writer on Spiritual growth, faith, and purpose. Preorder your copy today.",
+  authors: [{ name: "Prince Adeola" }],
+  keywords: ["Hello, I am Light - It is Light to meet you", "Prince Adeola", "Adeola Prince", "spiritual growth", "faith", "Christian book", "preorder"],
   
-  metadataBase: new URL("https://adeolaprince.com"),
+  metadataBase: new URL("https://www.princeadeola.com"),
 };
 
 export default function RootLayout({

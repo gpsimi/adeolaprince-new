@@ -26,12 +26,12 @@ const AuthorSection = () => {
               <div className="relative bg-card shadow-elegant rounded-lg flex items-center justify-center aspect-square">
                 {/* <Image
                   src="/images/hero-portrait-1.jpg"
-                  alt="Author Adeola Prince"
+                  alt="Author Prince Adeola"
                   width={500}
                   height={400}
                   className="rounded-lg object-cover w-full md:h-[640px]"
                 /> */}
-                <ImageCanvas src="/images/hero-portrait-1.jpg" alt="Author Adeola Prince" className="rounded-lg object-cover w-full md:h-[640px]" />
+                <ImageCanvas src="/images/hero-portrait-1.jpg" alt="Author Prince Adeola" className="rounded-lg object-cover w-full md:h-[640px]" />
 
               </div>
             </div>
@@ -43,9 +43,9 @@ const AuthorSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <h2 className="text-3xl md:text-5xl font-bold mb-6">Meet the Author</h2>
-            {/* <h3 className="text-2xl font-semibold text-primary mb-4">Adeola Prince</h3> */}
+            {/* <h3 className="text-2xl font-semibold text-primary mb-4">Prince Adeola</h3> */}
             <p className="text-lg text-muted-foreground mb-6">
-              <span className="font-extrabold text-primary">Adeola Prince</span> is a polymath with a first-class degree in avionics engineering
+              <span className="font-extrabold text-primary">Prince Adeola</span> is a polymath with a first-class degree in avionics engineering
               from National Aviation University, Kyiv Ukraine. He balances a career in aircraft
               engineering, music, and a profound passion for illuminating life's biggest questions.
             </p>

@@ -24,7 +24,7 @@ const AboutHero = () => {
               <div className="relative bg-card shadow-elegant rounded-lg aspect-square flex items-center justify-center">
                 <Image
                   src="/images/about.PNG"
-                  alt="Adeola Prince"
+                  alt="Prince Adeola"
                   width={500}
                   height={500}
                   className="rounded-lg object-cover w-full"
@@ -39,7 +39,7 @@ const AboutHero = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="w-full lg:w-1/2"
           >
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">Adeola Prince</h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">Prince Adeola</h1>
             <p className="text-xl text-muted-foreground mb-8">
               A global speaker, Astute saxophonist and Prolific Writer,
             </p>

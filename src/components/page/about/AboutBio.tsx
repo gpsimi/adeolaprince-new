@@ -15,7 +15,7 @@ const AboutBio = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">About Adeola Prince</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">About Prince Adeola</h2>
           </motion.div>
 
           <motion.div
@@ -26,7 +26,7 @@ const AboutBio = () => {
             className="space-y-6 text-lg text-muted-foreground leading-relaxed"
           >
             <p>
-              Adeola Prince is a polymath with a first-class degree in avionics
+              Prince Adeola is a polymath with a first-class degree in avionics
               engineering from National Aviation University, Kyiv Ukraine.
               He balances a career in aircraft engineering, music, and a profound
               passion for illuminating life's biggest questions. Prince's unique path

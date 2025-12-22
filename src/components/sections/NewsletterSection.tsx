@@ -50,7 +50,7 @@ const NewsletterSection = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Stay updated with C.O.A.P</h2>
           <p className="text-lg text-muted-foreground mb-8">
             Join our mailing list to receive exclusive content, updates about the book,
-            and inspirational messages from Adeola Prince.
+            and inspirational messages from Prince Adeola.
           </p>
 
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4">

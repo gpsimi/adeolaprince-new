@@ -2,7 +2,7 @@ import ComeSoonHero from "@/components/sections/ComeSoonHero";
 
 export const metadata = {
   title: "C.O.A.P — Chronicles of a Prince",
-  description: "Weekly newsletter from Adeola Prince",
+  description: "Weekly newsletter from Prince Adeola.",
 };
 
 

@@ -1,8 +1,8 @@
 import ContactForm from "@/components/forms/ContactForm";
 
 export const metadata = {
-  title: "Contact - Adeola Prince",
-  description: "Get in touch with Adeola Prince for bookings and collaborations.",
+  title: "Contact - Prince Adeola",
+  description: "Get in touch with Prince Adeola for bookings and collaborations.",
 };
 
 export default function ContactPage() {

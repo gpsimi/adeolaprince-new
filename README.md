@@ -1,4 +1,4 @@
-# Adeola Prince Personal Website
+# Prince Adeola Personal Website
 
 This repository contains a Next.js application (app router) for his Personal website and book launch site.
 

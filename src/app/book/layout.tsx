@@ -1,6 +1,6 @@
 export const metadata = {
-  title: 'Book - Adeola Prince',
-  description: 'Explore the book by Adeola Prince',
+  title: 'Book - Prince Adeola',
+  description: 'Explore the book by Prince Adeola.',
 }
 
 export default function BookLayout({

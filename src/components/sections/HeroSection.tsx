@@ -65,7 +65,7 @@ const HeroSection = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-balance leading-tight text-center lg:text-left"
             >
-              <span className="font-italics">Hi,</span> I&apos;m Adeola Prince
+              <span className="font-italics">Hi,</span> I&apos;m Prince Adeola
             </motion.h1>
 
             <motion.p
@@ -125,7 +125,7 @@ const HeroSection = () => {
                 >
                   <Image
                     src={imageSrc}
-                    alt="Adeola Prince portrait"
+                    alt="Prince Adeola portrait"
                     fill
                     style={{ objectFit: 'cover' }}
                     sizes="(min-width: 1024px) 420px, (min-width: 768px) 360px, 280px w-full"
@@ -154,7 +154,7 @@ const HeroSection = () => {
           <div className="relative w-full max-w-4xl h-[80vh]">
             <Image 
               src={imageSrc} 
-              alt="Adeola Prince portrait enlarged" 
+              alt="Prince Adeola portrait enlarged" 
               fill style={{ objectFit: 'contain' }} 
               priority 
             />

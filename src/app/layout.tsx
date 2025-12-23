@@ -20,8 +20,10 @@ export const metadata: Metadata = {
   description: "Writer and Global Speaker - Prince Adeola. A transformative Speaker and Writer on Spiritual growth, faith, and purpose. Preorder your copy today.",
   authors: [{ name: "Prince Adeola" }],
   keywords: ["Hello, I am Light - It is Light to meet you", "Prince Adeola", "Adeola Prince", "spiritual growth", "faith", "Christian book", "preorder"],
-  
   metadataBase: new URL("https://www.princeadeola.com"),
+  icons: {
+    icon: "/icon.png",
+  }
 };
 
 export default function RootLayout({

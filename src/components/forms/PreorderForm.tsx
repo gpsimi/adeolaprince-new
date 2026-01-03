@@ -126,7 +126,7 @@ export default function PreorderForm() {
             <FormItem>
               <FormLabel>Email Address *</FormLabel>
               <FormControl>
-                <Input type="email" placeholder="john@example.com" {...field} />
+                <Input type="email" placeholder="prince@email.com" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

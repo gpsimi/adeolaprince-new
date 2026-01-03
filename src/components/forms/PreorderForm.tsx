@@ -112,7 +112,7 @@ export default function PreorderForm() {
             <FormItem>
               <FormLabel>Full Name *</FormLabel>
               <FormControl>
-                <Input placeholder="John Doe" {...field} />
+                <Input placeholder="Prince Adeola" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

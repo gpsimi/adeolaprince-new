@@ -1,5 +1,5 @@
 
-import { Instagram, Twitter, Mail } from "lucide-react";
+import { Instagram, Twitter, LinkedinIcon, Mail } from "lucide-react";
 
 
 
@@ -49,6 +49,11 @@ export const socialLinks = [
         icon: Twitter,
         name: "Twitter",
         link: "https://x.com/adeolaprince_o?s=21&t=NQOfFgmSUYGon-dxvy7Jcw"
+    },
+    {
+        icon: LinkedinIcon,
+        name: "LinkedIn",
+        link: "https://www.linkedin.com/in/prince-adeola-903310312"
     },
     {
         icon: Mail,

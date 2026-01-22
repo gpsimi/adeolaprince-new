@@ -39,7 +39,7 @@ const TestimonialCard = ({ testimonial, isInView, index }: TestimonialCardProps)
         <p className="text-muted-foreground mb-6 italic">
           "{isExpanded
             ? testimonial.text
-            : truncatedText}
+            : truncatedText}"
           {isLongText && (
             <button
               onClick={toggleExpanded}
@@ -47,7 +47,7 @@ const TestimonialCard = ({ testimonial, isInView, index }: TestimonialCardProps)
             >
               {isExpanded ? "See less" : "See more"}
             </button>
-          )}"
+          )}
         </p>
       </div>
       <div className="border-t border-border pt-4">

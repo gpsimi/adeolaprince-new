@@ -62,7 +62,7 @@ const GalleryCard = async () => {
                 <div className="text-center py-16 border-2 border-dashed rounded-lg">
                     <h2 className="text-2xl font-semibold">No Images Yet</h2>
                     <p className="text-muted-foreground mt-2">
-                        The gallery is empty. New images will appear here soon
+                        The gallery is empty. New images will appear here soon!
                     </p>
                 </div>
             )}

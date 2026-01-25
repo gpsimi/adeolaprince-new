@@ -6,7 +6,7 @@ const GalleryHero = () => {
                 <Camera className="h-16 w-16 text-primary mx-auto mb-4" />
                 <h1 className="text-4xl md:text-5xl font-bold mb-4">My Gallery</h1>
                 <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                    Dive into a curated visual experience, showcasing inspiration, key events, and our vibrant community.
+                    Dive into my curated visual experience, showcasing inspiration, key events, and our vibrant community.
                 </p>
             </div>
         </section>

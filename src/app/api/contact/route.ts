@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { supabaseAdmin } from "@/lib/supabase-admin";
-import { sendEmail } from "@/lib/resend";
+import { sendResendMail } from "@/lib/resend";
 import { contactAdminEmail } from "@/lib/contact-admin-email-template";
 import { userConfirmationEmail } from "@/lib/user-confirmation";
 
@@ -23,18 +23,18 @@ export async function POST(req: Request) {
     });
 
     // 3️⃣ Email Prince
-    await sendEmail({
-      to: process.env.ADMIN_EMAIL!,
-      subject: "New Contact Message — Prince Adeola",
-      html: contactAdminEmail({ fullName, email, bookingType, message })
-    });
+    await sendResendMail(
+      process.env.ADMIN_EMAIL!.split(','),
+      "New Contact Message — Prince Adeola",
+      contactAdminEmail({ fullName, email, bookingType, message })
+    );
 
     // 4️⃣ Email User
-    await sendEmail({
-      to: email,
-      subject: "We’ve received your message",
-      html: userConfirmationEmail(fullName)
-    });
+    await sendResendMail(
+      email,
+      "We've received your message",
+      userConfirmationEmail(fullName)
+    );
 
     return NextResponse.json({ success: true });
   } catch (err) {

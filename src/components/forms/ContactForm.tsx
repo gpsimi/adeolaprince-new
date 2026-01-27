@@ -58,52 +58,56 @@ export default function ContactForm() {
   };
 
   return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 max-w-2xl">
-        <FormItem>
-          <FormLabel>Full name</FormLabel>
-          <FormControl>
-            <Input {...form.register("fullName")} placeholder="Your full name" />
-          </FormControl>
-          <FormMessage />
-        </FormItem>
+    <div className="bg-card p-8 rounded-lg shadow-elegant">
+      <Form {...form}>
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 max-w-2xl">
+          <FormItem>
+            <FormLabel>Full name</FormLabel>
+            <FormControl>
+              <Input {...form.register("fullName")} placeholder="Your full name" />
+            </FormControl>
+            <FormMessage />
+          </FormItem>
 
-        <FormItem>
-          <FormLabel>Email</FormLabel>
-          <FormControl>
-            <Input {...form.register("email")} type="email" placeholder="Email Address" />
-          </FormControl>
-          <FormMessage />
-        </FormItem>
+          <FormItem>
+            <FormLabel>Email</FormLabel>
+            <FormControl>
+              <Input {...form.register("email")} type="email" placeholder="Email Address" />
+            </FormControl>
+            <FormMessage />
+          </FormItem>
 
-        <FormItem>
-          <FormLabel>Booking type</FormLabel>
-          <FormControl>
-            <select
-              {...form.register("bookingType")}
-              className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
-            >
-              <option value="" disabled>Select Booking Type</option>
-              <option value="Speaking">Speaking</option>
-              <option value="Writing Collaboration">Writing</option>
-              <option value="Saxophonist">Saxophone/Music</option>
-            </select>
-          </FormControl>
-          <FormMessage />
-        </FormItem>
+          <FormItem>
+            <FormLabel>Booking type</FormLabel>
+            <FormControl>
+              <select
+                {...form.register("bookingType")}
+                className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
+              >
+                <option value="" disabled>Select Booking Type</option>
+                <option value="Speaking">Speaking</option>
+                <option value="Writing Collaboration">Writing</option>
+                <option value="Saxophonist">Saxophone/Music</option>
+              </select>
+            </FormControl>
+            <FormMessage />
+          </FormItem>
 
-        <FormItem>
-          <FormLabel>Message</FormLabel>
-          <FormControl>
-            <Textarea {...form.register("message")} placeholder="Tell us about your request" rows={6} />
-          </FormControl>
-          <FormMessage />
-        </FormItem>
+          <FormItem>
+            <FormLabel>Message</FormLabel>
+            <FormControl>
+              <Textarea {...form.register("message")} placeholder="Tell us about your request" rows={6} />
+            </FormControl>
+            <FormMessage />
+          </FormItem>
 
-        <div>
-          <Button type="submit" className="gradient-primary">Send message</Button>
-        </div>
-      </form>
-    </Form>
+          <div>
+            <Button type="submit" className="gradient-primary">Send message</Button>
+          </div>
+        </form>
+      </Form>
+    </div>
+
+
   );
 }

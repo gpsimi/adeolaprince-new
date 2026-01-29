@@ -25,7 +25,7 @@ export async function POST(req: Request) {
     // 3️⃣ Email Prince
     await sendResendMail(
       process.env.ADMIN_EMAIL!.split(','),
-      "New Contact Message — Prince Adeola",
+      "New Contact Message — Senetor Prince Adeola",
       contactAdminEmail({ fullName, email, bookingType, message })
     );
 

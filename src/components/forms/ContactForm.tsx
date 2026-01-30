@@ -18,7 +18,7 @@ import {
 } from "@/components/ui/form";
 
 const contactSchema = z.object({
-  fullName: z.string().min(2, "Please enter your Full Name"),
+  fullName: z.string().min(2, "Please enter your full name"),
   email: z.string().email("Please enter a valid email"),
   bookingType: z.enum(["Saxophonist", "Speaking", "Writing Collaboration"], {
     required_error: "Please select a booking type",

@@ -64,7 +64,7 @@ const CTASection = ({ variant = "primary" }: CTASectionProps) => {
             <Button asChild size="lg" variant="secondary" className="min-w-[200px] shadow-elegant">
               <Link href="/book/preorder">
                 <ShoppingCart className="mr-2 h-5 w-5" />
-                Preorder Your Copy
+                Order Your Copy
               </Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="min-w-[200px] bg-transparent text-primary-foreground border-primary-foreground hover:bg-primary-foreground/10">

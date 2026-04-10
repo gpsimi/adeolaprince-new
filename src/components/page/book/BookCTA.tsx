@@ -18,12 +18,12 @@ const BookCTA = () => {
               Ready to Begin Your Journey?
             </h2>
             <p className="text-lg mb-8 opacity-90 text-balance">
-              Preorder your copy today and be among the first to experience this
+              Order your copy today and be among the first to experience this
               transformative message. Your path of becoming starts here.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" variant="secondary" className="min-w-[200px] shadow-elegant">
-                <Link href="/book/preorder">Preorder Your Copy</Link>
+                <Link href="/book/preorder">Order Your Copy</Link>
               </Button>
               <Button
                 asChild

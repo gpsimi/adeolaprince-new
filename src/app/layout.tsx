@@ -17,9 +17,9 @@ const playfairDisplay = Playfair_Display({
 
 export const metadata: Metadata = {
   title: "Prince Adeola - Global Speaker || Saxophonist || Author",
-  description: "Writer and Global Speaker - Prince Adeola. A transformative Speaker and Writer on Spiritual growth, faith, and purpose. Preorder your copy today.",
+  description: "Writer and Global Speaker - Prince Adeola. A transformative Speaker and Writer on Spiritual growth, faith, and purpose. Order your copy today.",
   authors: [{ name: "Prince Adeola" }],
-  keywords: ["Hello, I am Light - It is Light to meet you", "Prince Adeola", "Adeola Prince", "spiritual growth", "faith", "Christian book", "preorder"],
+  keywords: ["Hello, I am Light - It is Light to meet you", "Prince Adeola", "Adeola Prince", "spiritual growth", "faith", "Christian book", "preorder", "Order Now"],
   metadataBase: new URL("https://www.princeadeola.com"),
   icons: {
     icon: "/icon.png",

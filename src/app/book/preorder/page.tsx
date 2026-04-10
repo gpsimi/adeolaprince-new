@@ -23,7 +23,7 @@ const Preorder = () => {
           >
             <div className="text-center mb-12">
               <ShoppingCart className="h-16 w-16 text-primary mx-auto mb-6" />
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">Preorder Your Copy</h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-4">Order Your Copy</h1>
               <p className="text-lg text-muted-foreground">
                 Secure your copy of "Hello, I am Light" today. Be among the first to
                 embark on this transformative journey.

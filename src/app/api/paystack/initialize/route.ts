@@ -26,7 +26,7 @@ export async function POST(req: NextRequest) {
       phone: phone ?? null,
       quantity: Number(quantity) || 1,
       delivery_location: deliveryLocation || null,
-      amount: (Number(quantity) || 1) * 8000 * 100, // kobo
+      amount: (Number(quantity) || 1) * 10000 * 100, // kobo
       currency: "NGN",
       paystack_reference: null,
       paystack_status: "pending",

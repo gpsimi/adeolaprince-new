@@ -47,9 +47,9 @@ const BookHero = () => {
                                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                                 </Link>
                             </Button>
-                            <Button asChild size="lg" variant="outline">
+                            {/* <Button asChild size="lg" variant="outline">
                                 <Link href="/register">Join Launch Event</Link>
-                            </Button>
+                            </Button> */}
                         </div>
                     </MotionDiv>
                 </div>
